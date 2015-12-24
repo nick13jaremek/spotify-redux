@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
+
 import buildStore from './store/buildStore';
+import {AppContainer} from './components/App';
 
 const store = buildStore(); // Build the Redux store to be used throughout the application
 
@@ -11,9 +13,7 @@ const store = buildStore(); // Build the Redux store to be used throughout the a
  */
 ReactDOM.render(
   <Provider store={store}>
-    <div>
-      Hello Yelp!
-    </div>
+    <AppContainer />
   </Provider>,
   document.getElementById('app')
 );
