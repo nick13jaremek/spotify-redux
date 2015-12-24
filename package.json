@@ -4,7 +4,9 @@
   "description": "A web-client built using React-redux and using the Yelp API.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server": "http-server -p 3000 dist",
+    "start": "webpack-dev-server --progress --colors --hot",
+    "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js 'test/**/*.@(js|jsx)'"
   },
   "keywords": [
     "react",
@@ -13,5 +15,35 @@
     "api"
   ],
   "author": "Nick M. Jaremek <nick13jaremek@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.3.26",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "chai": "^3.4.1",
+    "css-loader": "^0.23.1",
+    "jsdom": "^7.2.1",
+    "mocha": "^2.3.4",
+    "node-sass": "^3.4.2",
+    "react-hot-loader": "^1.3.0",
+    "sass-loader": "^3.1.2",
+    "style-loader": "^0.13.0",
+    "webpack": "^1.12.9",
+    "webpack-dev-server": "^1.14.0"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ]
+  },
+  "dependencies": {
+    "babel": "^6.3.26",
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3",
+    "react-redux": "^4.0.4",
+    "redux": "^3.0.5",
+    "redux-thunk": "^1.0.2"
+  }
 }
