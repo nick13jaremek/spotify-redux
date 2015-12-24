@@ -1,0 +1,17 @@
+{
+  "name": "yelp-redux",
+  "version": "0.0.1",
+  "description": "A web-client built using React-redux and using the Yelp API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "yelp",
+    "api"
+  ],
+  "author": "Nick M. Jaremek <nick13jaremek@gmail.com>",
+  "license": "ISC"
+}

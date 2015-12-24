@@ -1,0 +1,5 @@
+# npm modules
+node_modules
+
+# Webstorm editor files
+.idea
