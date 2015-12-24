@@ -22,6 +22,7 @@
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
     "chai": "^3.4.1",
+    "chai-immutable": "^1.5.3",
     "css-loader": "^0.23.1",
     "jsdom": "^7.2.1",
     "mocha": "^2.3.4",
@@ -41,6 +42,7 @@
   },
   "dependencies": {
     "babel": "^6.3.26",
+    "immutable": "^3.7.6",
     "react": "^0.14.3",
     "react-bootstrap": "^0.28.1",
     "react-dom": "^0.14.3",
