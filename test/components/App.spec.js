@@ -4,6 +4,7 @@ import ReactTestUtils from 'react-addons-test-utils';
 import {expect} from 'chai';
 
 import {App} from '../../src/components/App';
+import NavigationBar from '../../src/components/NavigationBar';
 
 function setup() {
   let props = {};
@@ -23,9 +24,9 @@ describe('App component', () => {
 
   it('renders the component', () => {
     const { output } = setup();
-    expect(output.type).to.equal('div');
-    expect(output.props.children).to.be.a('string');
-    expect(output.props.children).to.equal('Hello Yelp!');
+
+    expect(output).to.be.an('object');
+    expect(output.type).to.equal(NavigationBar);
   });
 
   it('has no props', () => {
