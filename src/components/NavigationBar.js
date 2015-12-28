@@ -8,11 +8,11 @@ export default class NavigationBar extends Component {
       <Navbar fixedTop inverse>
         <Navbar.Header>
           <Navbar.Brand>
-            <a href="#">Yelp-Redux</a>
+            <a href="#">Spotify-Redux</a>
           </Navbar.Brand>
         </Navbar.Header>
         <Nav>
-          <NavItem eventKey={1}><span>A React-redux Yelp feed panel</span></NavItem>
+          <NavItem eventKey={1}><span>A React-redux Spotify feed panel</span></NavItem>
         </Nav>
       </Navbar>
     );

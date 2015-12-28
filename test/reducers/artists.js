@@ -1,30 +1,30 @@
 import {List, Map, fromJS} from 'immutable';
 import {expect} from 'chai';
-import reducer from '../../src/reducers/businessReducer';
+import reducer from '../../src/reducers/ArtistsReducer';
 
-const businessList = require('../fixtures/business');
+const artistsList = require('../fixtures/albums');
 
-describe('Business reducer',  () => {
-  it('handles RECEIVE_BUSINESSES', () => {
+describe('Artists reducer',  () => {
+  it('handles RECEIVE_ARTISTS', () => {
     const initialState = Map();
     const action = {
-      type: 'RECEIVE_BUSINESSES',
-      businesses: businessList.businesses
+      type: 'RECEIVE_ARTISTS',
+      artists: artistsList.artists
     };
 
     const nextState = reducer(initialState, action);
 
     expect(nextState).to.equal(fromJS({
       isFetching: false,
-      items: businessList.businesses
+      items: artistsList.artists
     }));
   });
 
-  it('handles REQUEST_BUSINESSES', () => {
+  it('handles REQUEST_ARTISTS', () => {
 
     const initialState = Map();
     const action = {
-      type: 'REQUEST_BUSINESSES'
+      type: 'REQUEST_ARTISTS'
     };
 
     const nextState = reducer(initialState, action);

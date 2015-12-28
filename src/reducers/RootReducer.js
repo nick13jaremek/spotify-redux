@@ -1,8 +1,8 @@
 import {combineReducers} from 'redux';
-import businessReducer from './businessReducer';
+import artistReducer from './ArtistsReducer';
 
 const rootReducer = combineReducers({
-  business: businessReducer
+  artists: artistReducer
 });
 
 export default rootReducer;

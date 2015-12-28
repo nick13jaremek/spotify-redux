@@ -2,10 +2,10 @@ import {List, Map, fromJS} from 'immutable';
 import * as types from '../constants/ActionTypes';
 
 /*
-* This is the shape the state for the business reducer will have.
+* This is the shape the state for the artists reducer will have.
 * Elements:
-*   isFetching: boolean indicator on whether a request is being performed to fetch businesses from Yelp's API
-*   items: a list of business objects obtained from Yelp's API via requests
+*   isFetching: boolean indicator on whether a request is being performed to fetch artists from Spotify's API
+*   items: a list of artist objects obtained from Spotify's API via requests
 */
 const initialState = Map({
   isFetching: false,
@@ -13,18 +13,18 @@ const initialState = Map({
 });
 
 /*
-* Given a list of business objects which should come from an already-finished request to Yelp's API, this function
-* returns a new state with the 'items' field set to the List of Businesses provided as an argument.
+* Given a list of artist objects which should come from an already-finished request to Spotify's API, this function
+* returns a new state with the 'items' field set to the List of Artists provided as an argument.
 *
 * Params:
 *   state: the current state to use in order to generate the next one
-*   businessList: an array of objects, each object containing data associated to a business of the Yelp database
+*   artistList: an array of objects, each object containing data associated to a artist of the Spotify database
 *
-* Returns: the new state with the 'items' field set to the list of businesses provided as an argument
+* Returns: the new state with the 'items' field set to the list of artist provided as an argument
 */
-function receiveBusinesses(state, businessList) {
+function receiveArtists(state,artistsList) {
   var newState = fromJS({
-    items: businessList,
+    items: artistsList,
     isFetching: false
   });
 
@@ -32,7 +32,7 @@ function receiveBusinesses(state, businessList) {
 }
 
 /*
-* Sets the state's 'isFetching' field to true, in order to indicate that a request to fetch the Yelp's database businesses
+* Sets the state's 'isFetching' field to true, in order to indicate that a request to fetch the Spotify's database artists
 * is currently being performed
 *
 * Params:
@@ -40,7 +40,7 @@ function receiveBusinesses(state, businessList) {
 *
 * Returns: the new state with the 'isFetching' item set to true
 */
-function requestBusiness(state) {
+function requestArtists(state) {
   let newState = Map({
     isFetching: true
   });
@@ -57,13 +57,13 @@ function requestBusiness(state) {
 *
 * Returns: the new state for the provided action or the same state if the passed action did not have a matching 'type'
 */
-export default function businesses(state=initialState, action) {
+export default function artists(state=initialState, action) {
   switch(action.type) {
-    case types.RECEIVE_BUSINESSES:
-      return receiveBusinesses(state, action.businesses);
+    case types.RECEIVE_ARTISTS:
+      return receiveArtists(state, action.artists);
 
-    case types.REQUEST_BUSINESSES:
-      return requestBusiness(state);
+    case types.REQUEST_ARTISTS:
+      return requestArtists(state);
 
     default:
       return state;

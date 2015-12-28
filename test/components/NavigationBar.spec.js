@@ -45,7 +45,7 @@ describe('NavigationBar component', () => {
     let brandText = brand.props.children;
     expect(brandText.type).to.equal('a');
     expect(brandText.props.children)
-    expect(brandText.props.children).to.equal('Yelp-Redux');
+    expect(brandText.props.children).to.equal('Spotify-Redux');
 
     // Nav
     expect(nav.type).to.equal(Nav);
@@ -60,7 +60,7 @@ describe('NavigationBar component', () => {
     let title = navitem.props.children;
     expect(title.type).to.equal('span');
     expect(title.props.children).to.be.a('string');
-    expect(title.props.children).to.equal('A React-redux Yelp feed panel');
+    expect(title.props.children).to.equal('A React-redux Spotify feed panel');
   });
 
   it('has no props', () => {

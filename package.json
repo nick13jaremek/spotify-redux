@@ -1,7 +1,7 @@
 {
-  "name": "yelp-redux",
+  "name": "spotify-redux",
   "version": "0.0.1",
-  "description": "A web-client built using React-redux and using the Yelp API.",
+  "description": "A web-client built using React-redux and using the Spotify Web API.",
   "main": "index.js",
   "scripts": {
     "server": "http-server -p 3000 dist",
@@ -11,7 +11,7 @@
   "keywords": [
     "react",
     "redux",
-    "yelp",
+    "spotify",
     "api"
   ],
   "author": "Nick M. Jaremek <nick13jaremek@gmail.com>",
@@ -48,6 +48,7 @@
     "react-dom": "^0.14.3",
     "react-redux": "^4.0.4",
     "redux": "^3.0.5",
-    "redux-thunk": "^1.0.2"
+    "redux-thunk": "^1.0.2",
+    "spotify-web-api-js": "^0.15.0"
   }
 }
