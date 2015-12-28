@@ -13,7 +13,10 @@ export class App extends Component {
 
   render() {
     return (
-      <NavigationBar />
+      <div>
+        <NavigationBar />
+        {this.props.children}
+      </div>
     );
   }
 }

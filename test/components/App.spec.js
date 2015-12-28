@@ -26,7 +26,13 @@ describe('App component', () => {
     const { output } = setup();
 
     expect(output).to.be.an('object');
-    expect(output.type).to.equal(NavigationBar);
+    expect(output.type).to.equal('div');
+
+    const children = output.props.children;
+    expect(children).to.be.an('array');
+    expect(children).to.have.length(2);
+    expect(children[0].type).to.equal(NavigationBar);
+    expect(children[1]).to.equal(undefined);
   });
 
   it('has no props', () => {

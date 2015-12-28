@@ -28,9 +28,9 @@ describe('NavigationBar component', () => {
     // Navbar
     expect(output.type).to.equal(Navbar);
     expect(output.props.children).to.be.an('array');
-    expect(output.props.children).to.have.length(2);
+    expect(output.props.children).to.have.length(3);
 
-    let [header, nav] = output.props.children;
+    let [header, nav, selector] = output.props.children;
 
     // Navbar Header
     expect(header.type).to.equal(Navbar.Header);
@@ -61,6 +61,22 @@ describe('NavigationBar component', () => {
     expect(title.type).to.equal('span');
     expect(title.props.children).to.be.a('string');
     expect(title.props.children).to.equal('A React-redux Spotify feed panel');
+
+    // Selector
+    expect(selector.type).to.equal(Nav);
+    expect(selector.props.children).to.be.an('array');
+    expect(selector.props.children).to.have.length(3);
+
+    let [artists, albums, songs] = selector.props.children;
+    expect(artists.type).to.equal(NavItem);
+    expect(artists.props.eventKey).to.equal(1);
+    expect(artists.props.children).to.equal('Artists');
+    expect(albums.type).to.equal(NavItem);
+    expect(albums.props.eventKey).to.equal(2);
+    expect(albums.props.children).to.equal('Albums');
+    expect(songs.type).to.equal(NavItem);
+    expect(songs.props.eventKey).to.equal(3);
+    expect(songs.props.children).to.equal('Songs');
   });
 
   it('has no props', () => {

@@ -3,3 +3,6 @@ node_modules
 
 # Webstorm editor files
 .idea
+
+# Logs
+npm-debug.log

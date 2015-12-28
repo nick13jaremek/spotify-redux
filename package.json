@@ -42,11 +42,13 @@
   },
   "dependencies": {
     "babel": "^6.3.26",
+    "history": "^1.17.0",
     "immutable": "^3.7.6",
     "react": "^0.14.3",
     "react-bootstrap": "^0.28.1",
     "react-dom": "^0.14.3",
     "react-redux": "^4.0.4",
+    "react-router": "^1.0.3",
     "redux": "^3.0.5",
     "redux-thunk": "^1.0.2",
     "spotify-web-api-js": "^0.15.0"
