@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactTestUtils from 'react-addons-test-utils';
 import {expect} from 'chai';
+import {Link} from 'react-router';
 
-import {Navbar, Nav, NavItem} from 'react-bootstrap';
 import NavigationBar from '../../src/components/NavigationBar';
 
 function setup() {
@@ -25,58 +25,101 @@ describe('NavigationBar component', () => {
   it('renders the component', () => {
     const { output } = setup();
 
-    // Navbar
-    expect(output.type).to.equal(Navbar);
-    expect(output.props.children).to.be.an('array');
-    expect(output.props.children).to.have.length(3);
+    // nav
+    // --div container
+    // ----div header
+    // ------Link
+    // ----div collapse
+    // ------ul
+    // ------ul
 
-    let [header, nav, selector] = output.props.children;
+    // Navbar root
+    expect(output.type).to.equal('nav');
+    expect(output.props.className).to.equal('navbar navbar-inverse navbar-fixed-top');
+    expect(output.props.children).to.be.an('object');
+
+    // Navbar container
+    let container = output.props.children;
+
+    expect(container.type).to.equal('div');
+    expect(container.props.className).to.equal('container-fluid');
+    expect(container.props.children).to.be.an('array');
+    expect(container.props.children).to.have.length(2);
+
+    let [header, collapse] = container.props.children;
 
     // Navbar Header
-    expect(header.type).to.equal(Navbar.Header);
+    expect(header.type).to.equal('div');
+    expect(header.props.className).to.equal('navbar-header');
     expect(header.props.children).to.be.an('object');
 
     // Navbar Header Brand
     let brand = header.props.children;
-    expect(brand.type).to.equal(Navbar.Brand);
-    expect(brand.props.children).to.be.an('object');
+    expect(brand.type).to.equal(Link);
+    expect(brand.props.children).to.be.a('string');
 
     // Navbar Header Brand text
     let brandText = brand.props.children;
-    expect(brandText.type).to.equal('a');
-    expect(brandText.props.children)
-    expect(brandText.props.children).to.equal('Spotify-Redux');
+    expect(brandText).to.equal('Spotify-Redux');
 
-    // Nav
-    expect(nav.type).to.equal(Nav);
-    expect(nav.props.children).to.be.an('object');
+    // Navbar collapse
+    expect(collapse.type).to.equal('div');
+    expect(collapse.props.className).to.equal('collapse navbar-collapse')
+    expect(collapse.props.children).to.be.an('array');
+    expect(collapse.props.children).to.have.length(2);
 
-    // NavItem
-    let navitem = nav.props.children;
-    expect(navitem.type).to.equal(NavItem);
-    expect(navitem.props.children).to.be.an('object');
+    let [titleItem, selector] = collapse.props.children;
 
-    // NavItem span child
-    let title = navitem.props.children;
-    expect(title.type).to.equal('span');
-    expect(title.props.children).to.be.a('string');
-    expect(title.props.children).to.equal('A React-redux Spotify feed panel');
+    // Navbar title item
+    expect(titleItem.type).to.equal('ul');
+    expect(titleItem.props.children).to.be.an('object');
+    let title = titleItem.props.children;
+    expect(title.type).to.equal('li');
+    expect(title.props.children).to.be.an('object');
+    let titleText = title.props.children;
+    expect(titleText.type).to.equal('a');
+    expect(titleText.props.children).to.be.an('object');
+    expect(titleText.props.children.type).to.equal('span');
+    expect(titleText.props.children.props.children).to.be.a('string');
+    expect(titleText.props.children.props.children).to.equal('A React-Redux Spotify feed panel');
 
     // Selector
-    expect(selector.type).to.equal(Nav);
+    expect(selector.type).to.equal('ul');
+    expect(selector.props.className).to.equal('nav navbar-nav navbar-right');
     expect(selector.props.children).to.be.an('array');
     expect(selector.props.children).to.have.length(3);
 
     let [artists, albums, songs] = selector.props.children;
-    expect(artists.type).to.equal(NavItem);
-    expect(artists.props.eventKey).to.equal(1);
-    expect(artists.props.children).to.equal('Artists');
-    expect(albums.type).to.equal(NavItem);
-    expect(albums.props.eventKey).to.equal(2);
-    expect(albums.props.children).to.equal('Albums');
-    expect(songs.type).to.equal(NavItem);
-    expect(songs.props.eventKey).to.equal(3);
-    expect(songs.props.children).to.equal('Songs');
+
+    // Artists
+    expect(artists.type).to.equal('li');
+    expect(artists.props.role).to.equal('presentation');
+    expect(artists.props.children).to.be.an('object');
+    let artistsLink = artists.props.children;
+    expect(artistsLink.type).to.equal(Link);
+    expect(artistsLink.props.to).to.equal('/artists');
+    expect(artistsLink.props.children).to.be.a('string');
+    expect(artistsLink.props.children).to.equal('Artists');
+
+    // Albums
+    expect(albums.type).to.equal('li');
+    expect(albums.props.role).to.equal('presentation');
+    expect(albums.props.children).to.be.an('object');
+    let albumsLink = albums.props.children;
+    expect(albumsLink.type).to.equal(Link);
+    expect(albumsLink.props.to).to.equal('/albums');
+    expect(albumsLink.props.children).to.be.a('string');
+    expect(albumsLink.props.children).to.equal('Albums');
+
+    // Songs
+    expect(songs.type).to.equal('li');
+    expect(songs.props.role).to.equal('presentation');
+    expect(songs.props.children).to.be.an('object');
+    let songsLink = songs.props.children;
+    expect(songsLink.type).to.equal(Link);
+    expect(songsLink.props.to).to.equal('/songs');
+    expect(songsLink.props.children).to.be.a('string');
+    expect(songsLink.props.children).to.equal('Songs');
   });
 
   it('has no props', () => {

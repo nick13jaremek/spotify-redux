@@ -5,6 +5,7 @@ import {expect} from 'chai';
 
 import {App} from '../../src/components/App';
 import NavigationBar from '../../src/components/NavigationBar';
+import Index from '../../src/components/Index';
 
 function setup() {
   let props = {};
@@ -32,7 +33,7 @@ describe('App component', () => {
     expect(children).to.be.an('array');
     expect(children).to.have.length(2);
     expect(children[0].type).to.equal(NavigationBar);
-    expect(children[1]).to.equal(undefined);
+    expect(children[1].type).to.equal(Index);
   });
 
   it('has no props', () => {

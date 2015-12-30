@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
 import NavigationBar from './NavigationBar';
+import Index from './Index';
 
 export class App extends Component {
 
@@ -14,7 +15,7 @@ export class App extends Component {
     return (
       <div {...this.props}>
         <NavigationBar />
-        {this.props.children}
+        {this.props.children || <Index />}
       </div>
     );
   }

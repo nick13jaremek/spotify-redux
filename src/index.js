@@ -19,16 +19,15 @@ const store = buildStore(); // Build the Redux store to be used throughout the a
  * The 'Provider' is a special component which receives a Redux store as a prop. This store can then be made available to
  * the 'Provider' children through the 'connect' function on their Component definition.
  */
-const routes = <Route component={AppContainer}>
-  <Route path="/" component={Index}/>
-  <Route path="/artists" component={ArtistsContainer} />
-  <Route path="/albums" component={Albums} />
-  <Route path="/songs" component={Songs} />
+const routes = <Route path="/" component={AppContainer}>
+  <Route path="artists" component={ArtistsContainer} />
+  <Route path="albums" component={Albums} />
+  <Route path="songs" component={Songs} />
 </Route>;
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={history}>{routes}</Router>
+    <Router>{routes}</Router>
   </Provider>,
   document.getElementById('app')
 );

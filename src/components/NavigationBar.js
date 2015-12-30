@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import {Navbar, Nav, NavItem} from 'react-bootstrap';
-import Router from 'react-router';
+import {Router, Link} from 'react-router';
 import history from '../constants/History';
 
+//TODO: break NavigationBar component into smaller components so that testing is simpler
 export default class NavigationBar extends Component {
 
   /*
@@ -44,17 +45,17 @@ export default class NavigationBar extends Component {
     let path = '/';
     console.log('Selected', selectedKey, this.state);
     this.setActive(selectedKey);
-    switch (selectedKey) {
-      case 1:
-        history.replaceState(null, 'artists');
-        break;
-      case 2:
-        history.replaceState(null, 'albums');
-        break;
-      case 3:
-        history.replaceState(null, 'songs');
-        break;
-    }
+    //switch (selectedKey) {
+    //  case 1:
+    //    history.replaceState(null, '/artists');
+    //    break;
+    //  case 2:
+    //    history.replaceState(null, '/albums');
+    //    break;
+    //  case 3:
+    //    history.replaceState(null, '/songs');
+    //    break;
+    //}
   }
 
   /*
@@ -63,22 +64,25 @@ export default class NavigationBar extends Component {
    * */
   render() {
     return (
-      <Navbar fixedTop inverse>
-        <Navbar.Header>
-          <Navbar.Brand>
-            <a href="/">Spotify-Redux</a>
-          </Navbar.Brand>
-        </Navbar.Header>
-        <Nav>
-          <NavItem eventKey={1}><span>A React-redux Spotify feed panel</span></NavItem>
-        </Nav>
-
-        <Nav bsStyle="pills" pullRight className="navbar-nav" activeKey={this.state.active} onSelect={this.handleSelect}>
-          <NavItem eventKey={1}>Artists</NavItem>
-          <NavItem eventKey={2}>Albums</NavItem>
-          <NavItem eventKey={3}>Songs</NavItem>
-        </Nav>
-      </Navbar>
+      <nav className="navbar navbar-inverse navbar-fixed-top">
+        <div className="container-fluid">
+          <div className="navbar-header">
+            <Link className="navbar-brand" to="/">Spotify-Redux</Link>
+          </div>
+          <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul className="nav navbar-nav">
+              <li>
+                <a href="#"><span>A React-Redux Spotify feed panel</span></a>
+              </li>
+            </ul>
+            <ul className="nav navbar-nav navbar-right">
+              <li role="presentation"><Link to="/artists" activeStyle="active">Artists</Link></li>
+              <li role="presentation"><Link to="/albums" activeStyle="active">Albums</Link></li>
+              <li role="presentation"><Link to="/songs" activeStyle="active">Songs</Link></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     );
   }
 }
