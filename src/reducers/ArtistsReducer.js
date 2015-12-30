@@ -24,10 +24,9 @@ const initialState = Map({
 */
 function receiveArtists(state,artistsList) {
   var newState = fromJS({
-    items: artistsList,
+    items: artistsList.items, // Return items property of Spotify response, which contains the array of artists
     isFetching: false
   });
-
   return state.merge(newState);
 }
 

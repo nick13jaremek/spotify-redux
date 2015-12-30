@@ -3,6 +3,7 @@ import {Navbar, Nav, NavItem} from 'react-bootstrap';
 import {Router, Link} from 'react-router';
 import history from '../constants/History';
 
+const ACTIVE = {active: 'active'};
 //TODO: break NavigationBar component into smaller components so that testing is simpler
 export default class NavigationBar extends Component {
 
@@ -76,9 +77,9 @@ export default class NavigationBar extends Component {
               </li>
             </ul>
             <ul className="nav navbar-nav navbar-right">
-              <li role="presentation"><Link to="/artists" activeStyle="active">Artists</Link></li>
-              <li role="presentation"><Link to="/albums" activeStyle="active">Albums</Link></li>
-              <li role="presentation"><Link to="/songs" activeStyle="active">Songs</Link></li>
+              <li role="presentation"><Link to="/artists" activeStyle={ACTIVE}>Artists</Link></li>
+              <li role="presentation"><Link to="/albums" activeStyle={ACTIVE}>Albums</Link></li>
+              <li role="presentation"><Link to="/songs" activeStyle={ACTIVE}>Songs</Link></li>
             </ul>
           </div>
         </div>

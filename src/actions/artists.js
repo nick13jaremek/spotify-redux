@@ -4,7 +4,7 @@ import SpotifyApi from '../constants/Spotifier';
 export function getArtists() {
   return dispatch => {
     dispatch(requestArtists());
-    return SpotifyApi.searchArtists('Leonard Cohen')
+    return SpotifyApi.searchArtists('Leonard')
       .then(json => dispatch(receiveArtists(json)))
       .catch(ex => {
         console.log('ex', ex);

@@ -5,9 +5,7 @@ import appReducer from '../reducers/RootReducer';
 
 const createStoreWithMiddleware = applyMiddleware(thunkMiddleware)(createStore);
 
-export default function buildStore(initialState={
-  artists: Map()
-}) {
+export default function buildStore(initialState) {
   const store = createStoreWithMiddleware(appReducer, initialState);
 
   return store;
