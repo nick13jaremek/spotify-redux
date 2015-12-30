@@ -14,6 +14,7 @@ export default class NavigationBar extends Component {
   * */
   constructor(props) {
     super(props);
+    console.log('Initial', props, this.state);
     this.setActive = this.setActive.bind(this);
     this.handleSelect = this.handleSelect.bind(this);
     this.state = {

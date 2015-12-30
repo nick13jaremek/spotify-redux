@@ -6,7 +6,7 @@ import history from './constants/History';
 
 import buildStore from './store/buildStore';
 import {AppContainer} from './components/App';
-import Artists from './components/Artists';
+import {ArtistsContainer} from './components/Artists';
 import Albums from './components/Albums';
 import Songs from './components/Songs';
 import Index from './components/Index';
@@ -21,7 +21,7 @@ const store = buildStore(); // Build the Redux store to be used throughout the a
  */
 const routes = <Route component={AppContainer}>
   <Route path="/" component={Index}/>
-  <Route path="/artists" component={Artists} />
+  <Route path="/artists" component={ArtistsContainer} />
   <Route path="/albums" component={Albums} />
   <Route path="/songs" component={Songs} />
 </Route>;
