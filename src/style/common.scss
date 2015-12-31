@@ -1,5 +1,6 @@
 body {
   padding-top: 70px;
+  padding-bottom: 40px;
 }
 
 .equal, .equal > div[class*='col-'] {
@@ -13,4 +14,14 @@ body {
 
 .fxd-img {
   width: 100%;
+}
+
+.footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #f5f5f5;
 }

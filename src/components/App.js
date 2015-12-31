@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 import NavigationBar from './NavigationBar';
 import Index from './Index';
-
+import Footer from './Footer';
 export class App extends Component {
 
   componentDidMount() {
@@ -16,6 +16,7 @@ export class App extends Component {
       <div {...this.props}>
         <NavigationBar />
         {this.props.children || <Index />}
+        <Footer />
       </div>
     );
   }
