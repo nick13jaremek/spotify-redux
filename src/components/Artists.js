@@ -16,18 +16,28 @@ export class Artists extends Component {
 
   // TODO: divide the number of artists between a fixed-sized number which will be the number of items per row. Then, create as many rows as needed to populate a grid-like panel of artists.
   renderArtists() {
-    const {artists} = this.props;
+    const chunk = 5;
+    const {items} = this.props.artists;
+    console.log('Items', items);
+    let result = [];
 
-    let items = artists.items.map((artist, idx) => {
-      return <ArtistCard key={idx} artist={artist} />
-    });
-    return (
-      <div className="container">
-        <div className="row equal">
-          {items}
-        </div>
-      </div>
-    )
+    for (let i = 0; i < items.length; i += chunk) {
+      let artistCards = items
+        .slice(i, i + chunk)
+        .map((artist, idx) => {
+          return <ArtistCard key={artist.id} artist={artist} />
+      });
+
+      if (artistCards.length < chunk) {
+        for (let j = 0; j < chunk - artistCards.length + 1; j++) {
+          artistCards.push(<div className="col-md-2" key={'artist-placeholder-' + j}></div>);
+        }
+      }
+
+      result.push(<div className="row equal" key={'songs-row-' + i}>{artistCards}</div>);
+    }
+    console.log('Result', result);
+    return result;
   }
 
   render() {

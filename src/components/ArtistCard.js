@@ -1,15 +1,16 @@
 import React, {Component} from 'react';
+import {ALBUM_PLACEHOLDER} from '../constants/Config';
 
 export default class ArtistCard extends Component {
 
   render() {
     const {artist} = this.props;
-    const imageUrl = (artist.images.length ? artist.images[0].url : "");
+    const imageUrl = (artist.images.length ? artist.images[0].url : "/assets/" + ALBUM_PLACEHOLDER);
 
     return (
-      <div className="col-md-3">
+      <div className="col-md-2">
         <div className="thumbnail">
-          <img src={imageUrl} className="img-thumbnail"/>
+          <img src={imageUrl} className="img-responsive center-block fxd-img"/>
             <div className="caption">
               <h4 className="">{artist.name}</h4>
               <ul>

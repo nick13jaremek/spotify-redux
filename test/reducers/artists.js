@@ -2,7 +2,7 @@ import {List, Map, fromJS} from 'immutable';
 import {expect} from 'chai';
 import reducer from '../../src/reducers/ArtistsReducer';
 
-const artistsList = require('../fixtures/albums');
+const artistsList = require('../fixtures/artists');
 
 describe('Artists reducer',  () => {
   it('handles RECEIVE_ARTISTS', () => {
