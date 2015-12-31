@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import ReactTestUtils from 'react-addons-test-utils';
 import {Map, List} from 'immutable';
 import {Artists} from '../../src/components/Artists';
+import SearchBar from '../../src/components/SearchBar';
 
 const ARTISTS_FIXTURES = require('../fixtures/artists').artists.items;
 
@@ -34,7 +35,8 @@ describe('Artists default component', () => {
     const {output} = setup([]);
 
     expect(output.type).to.equal('div');
-    expect(output.props.children).to.be.empty;
+    expect(output.props.children).to.be.an('object');
+    expect(output.props.children.type).to.equal(SearchBar);
 
   });
 

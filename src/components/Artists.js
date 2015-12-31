@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {getArtists} from '../actions/artists';
 import ArtistCard from '../components/ArtistCard';
+import SearchBar from '../components/SearchBar';
 /*
 * This component is related to the Artists items from the Spotify Web API. Please note that it uses the 'connect'
 * function in order to receive the 'dispatch' method in the props from the parent 'Provider' component. Artists will be
@@ -11,14 +12,14 @@ export class Artists extends Component {
 
   componentWillMount() {
     const {dispatch} = this.props; // Obtain the dispatch function from the store object passed to the App component by the 'Provider' parent component
-    dispatch(getArtists());
+    //dispatch(getArtists());
   }
 
   // TODO: divide the number of artists between a fixed-sized number which will be the number of items per row. Then, create as many rows as needed to populate a grid-like panel of artists.
   renderArtists() {
     const chunk = 5;
     const {items} = this.props.artists;
-    console.log('Items', items);
+
     let result = [];
 
     for (let i = 0; i < items.length; i += chunk) {
@@ -36,7 +37,11 @@ export class Artists extends Component {
 
       result.push(<div className="row equal" key={'songs-row-' + i}>{artistCards}</div>);
     }
-    console.log('Result', result);
+
+    if (!result || result.length === 0) {
+      return <SearchBar />;
+    }
+
     return result;
   }
 
