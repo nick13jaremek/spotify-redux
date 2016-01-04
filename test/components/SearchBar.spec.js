@@ -6,7 +6,10 @@ import ReactTestUtils from 'react-addons-test-utils';
 import SearchBar from '../../src/components/SearchBar';
 
 function setup() {
-  let props = {};
+  let props = {
+    dataType: 'stuff',
+    dispatch: function() {}
+  };
 
   let renderer = ReactTestUtils.createRenderer();
   renderer.render(<SearchBar {...props} />);
@@ -79,5 +82,13 @@ describe('SearchBar component', () => {
     expect(button.props.type).to.equal('button');
     expect(button.props.children).to.be.a('string');
     expect(button.props.children).to.equal('Go!');
+  });
+
+  it('has props defined', () => {
+    const {props} = setup();
+
+    expect(props.dataType).to.be.a('string');
+    expect(props.dataType).to.equal('stuff');
+    expect(props.dispatch).to.be.a('function');
   });
 });

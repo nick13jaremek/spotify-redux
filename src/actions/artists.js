@@ -1,10 +1,10 @@
 import * as types from '../constants/ActionTypes';
 import SpotifyApi from '../constants/Spotifier';
 
-export function getArtists() {
+export function getArtists(name) {
   return dispatch => {
-    dispatch(requestArtists());
-    return SpotifyApi.searchArtists('Leonard')
+    dispatch(requestArtists(name));
+    return SpotifyApi.searchArtists(name)
       .then(json => dispatch(receiveArtists(json)))
       .catch(ex => {
         console.log('ex', ex);

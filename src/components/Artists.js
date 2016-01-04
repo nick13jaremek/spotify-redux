@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {getArtists} from '../actions/artists';
 import ArtistCard from '../components/ArtistCard';
 import SearchBar from '../components/SearchBar';
 /*
@@ -10,14 +9,11 @@ import SearchBar from '../components/SearchBar';
 * */
 export class Artists extends Component {
 
-  componentWillMount() {
-    const {dispatch} = this.props; // Obtain the dispatch function from the store object passed to the App component by the 'Provider' parent component
-    //dispatch(getArtists());
-  }
 
   // TODO: divide the number of artists between a fixed-sized number which will be the number of items per row. Then, create as many rows as needed to populate a grid-like panel of artists.
   renderArtists() {
     const chunk = 5;
+    const {dispatch} = this.props; // Obtain the dispatch function from the store object passed to the App component by the 'Provider' parent component
     const {items} = this.props.artists;
 
     let result = [];
@@ -39,7 +35,7 @@ export class Artists extends Component {
     }
 
     if (!result || result.length === 0) {
-      return <SearchBar />;
+      return <SearchBar dataType="artists" dispatch={dispatch}/>;
     }
 
     return result;

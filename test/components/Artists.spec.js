@@ -36,7 +36,13 @@ describe('Artists default component', () => {
 
     expect(output.type).to.equal('div');
     expect(output.props.children).to.be.an('object');
-    expect(output.props.children.type).to.equal(SearchBar);
+
+    let searchBar = output.props.children;
+
+    expect(searchBar.type).to.equal(SearchBar);
+    expect(searchBar.props.dataType).to.be.a('string');
+    expect(searchBar.props.dataType).to.equal('artists');
+    expect(searchBar.props.dispatch).to.be.a('function');
 
   });
 
