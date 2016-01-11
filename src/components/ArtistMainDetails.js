@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-const ARTIST_PLACEHOLDER_IMAGE = '/assets/album-placeholder.png';
+import {ALBUM_PLACEHOLDER} from '../../src/constants/Config';
 
 export default class ArtistMainDetails extends Component {
 
@@ -11,7 +11,7 @@ export default class ArtistMainDetails extends Component {
       return <div></div>;
     }
 
-    const image = (details.images && details.images.length > 0) ? details.images[0].url : ARTIST_PLACEHOLDER_IMAGE;
+    const image = (details.images && details.images.length > 0) ? details.images[0].url : ALBUM_PLACEHOLDER;
 
     const name = (details.name) ? <li className="list-group-item"><b>Name: </b><span>{details.name}</span></li> : null;
 

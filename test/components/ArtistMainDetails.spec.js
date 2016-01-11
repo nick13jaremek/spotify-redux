@@ -2,14 +2,14 @@ import React from 'react';
 import {expect} from 'chai';
 import ReactDOM from 'react-dom';
 import ReactTestUtils from 'react-addons-test-utils';
+import shallowTestUtils from "react-shallow-testutils";
 
 import ArtistMainDetails from '../../src/components/ArtistMainDetails';
+import {ALBUM_PLACEHOLDER} from '../../src/constants/Config';
 
 const ARTIST_FIXTURE = require('../fixtures/artists').artists.items[0];
 
 function setup(data) {
-
-  data.genres = ['electro-rock'];
 
   let props = {
     details: data
@@ -50,7 +50,11 @@ describe('ArtistMainDetails empty component', () => {
 describe('ArtistMainDetails populated component', () => {
 
   it('renders the component populated with ALL data', () => {
-    const {output} = setup(ARTIST_FIXTURE);
+
+    const data = ARTIST_FIXTURE;
+    data.genres = ['electro-rock'];
+
+    const {output} = setup(data);
     console.log('OUTPUT', output);
     expect(output.type).to.equal('div');
     expect(output.props.children).to.be.an('object');
@@ -131,5 +135,26 @@ describe('ArtistMainDetails populated component', () => {
     expect(followersLabel.props.children).to.equal('Followers: ');
     expect(followersValue.type).to.equal('span');
     expect(followersValue.props.children).to.equal(ARTIST_FIXTURE.followers.total);
+  });
+
+  it('renders the component without artist details except for image', () => {
+    const {output} = setup({url: ''});
+
+    /*
+    * Use the 'shallowTestUtils' library to find DOM elements in the component
+    * obtained as an output from the ReactTestUtils.Renderer object.
+    */
+    const image = shallowTestUtils.findAllWithType(output, 'img')[0];
+    expect(image.props.src).to.equal(ALBUM_PLACEHOLDER);
+
+    const list = shallowTestUtils.findAllWithType(output, 'ul')[0];
+    expect(list.props.children).to.be.an('array');
+    expect(list.props.children).to.have.length(4);
+
+    const [name, genre, popularity, followers] = list.props.children;
+    expect(name).to.equal(null);
+    expect(genre).to.equal(null);
+    expect(popularity).to.equal(null);
+    expect(followers).to.equal(null);
   });
 });
