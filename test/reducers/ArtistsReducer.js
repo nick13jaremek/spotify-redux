@@ -2,21 +2,21 @@ import {List, Map, fromJS} from 'immutable';
 import {expect} from 'chai';
 import reducer from '../../src/reducers/ArtistsReducer';
 
-const artistsList = require('../fixtures/artists');
+const artistsList = require('../fixtures/artists').artists;
 
 describe('Artists reducer',  () => {
   it('handles RECEIVE_ARTISTS', () => {
     const initialState = Map();
     const action = {
       type: 'RECEIVE_ARTISTS',
-      artists: artistsList.artists
+      artists: artistsList
     };
 
     const nextState = reducer(initialState, action);
 
     expect(nextState).to.equal(fromJS({
       isFetching: false,
-      items: artistsList.artists.items
+      items: artistsList.items
     }));
   });
 
