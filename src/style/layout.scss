@@ -1,0 +1,31 @@
+html, body, .full-width-container {
+  height: 100%;
+  width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.row.tabled-row {
+  height: 100%;
+  display: table-row;
+}
+
+.col-md-3.no-float, .col-md-9.no-float {
+  float: none;
+}
+
+.col-md-3.no-float {
+  display: table-cell;
+  background: #0b97c4;
+}
+
+.col-md-9.no-float {
+  display: table-cell;
+  background: #e87d0d;
+  float: none;
+}
+
+
+
+
+

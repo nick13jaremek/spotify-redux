@@ -8,6 +8,7 @@ export default class SearchBar extends Component {
     const {dataType} = this.props;
     this.searchItems = this.searchItems.bind(this, dataType);
   }
+
   searchItems(itemType) {
     const {dispatch} = this.props; // Obtain the dispatch function from the store object passed to the App component by the 'Provider' parent component
     console.log('Search items', itemType);

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {ALBUM_PLACEHOLDER} from '../constants/Config';
+import {Router, Link} from 'react-router';
 
 export default class ArtistCard extends Component {
 
@@ -17,7 +18,7 @@ export default class ArtistCard extends Component {
                 <li><span>Popularity: {artist.popularity}</span></li>
                 <li><span>Genre: {artist.genres.length ? artist.genres[0] : 'unknown'}</span></li>
               </ul>
-              <a href={artist.external_urls.spotify} className="btn btn-default btn-xs" role="button">More Info</a>
+              <Link to={`/artist/${artist.id}`} className="btn btn-default btn-xs" role="button">More Info</Link>
             </div>
         </div>
       </div>
