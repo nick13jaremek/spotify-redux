@@ -1,0 +1,489 @@
+{
+  "href" : "https://api.spotify.com/v1/artists/12Chz98pHFMPJEknJQMWvI/albums?offset=0&limit=20&album_type=single,album,compilation,appears_on,ep",
+  "items" : [ {
+    "album_type" : "album",
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/2wart5Qjnvx1fd7LPdQxgJ"
+    },
+    "href" : "https://api.spotify.com/v1/albums/2wart5Qjnvx1fd7LPdQxgJ",
+    "id" : "2wart5Qjnvx1fd7LPdQxgJ",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/849eecf3c9df835181c2970c435ac2d008346ea3",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/8b6392caa83625135f0f53d6e2b0631bbe4c4c0b",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/8978459cc3ad68b39bd6dbda418625b06ba5d80c",
+      "width" : 64
+    } ],
+    "name" : "Drones",
+    "type" : "album",
+    "uri" : "spotify:album:2wart5Qjnvx1fd7LPdQxgJ"
+  }, {
+    "album_type" : "album",
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/2m7L60M210ABzrY9GLyBPZ"
+    },
+    "href" : "https://api.spotify.com/v1/albums/2m7L60M210ABzrY9GLyBPZ",
+    "id" : "2m7L60M210ABzrY9GLyBPZ",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/53b942b5ef0b23c84ae5281865236609c132bff5",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/61e78c53b704ecb0610324dfd75d226129861ca3",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/f88f86e2da968f567d2f864e77f30ca273413599",
+      "width" : 64
+    } ],
+    "name" : "Live At Rome Olympic Stadium",
+    "type" : "album",
+    "uri" : "spotify:album:2m7L60M210ABzrY9GLyBPZ"
+  }, {
+    "album_type" : "album",
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/3KuXEGcqLcnEYWnn3OEGy0"
+    },
+    "href" : "https://api.spotify.com/v1/albums/3KuXEGcqLcnEYWnn3OEGy0",
+    "id" : "3KuXEGcqLcnEYWnn3OEGy0",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/59fbbabeecaade686c44c99e5d1102130556bba1",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/ca0f14d8190f1cfc7183884a65af00ccd3e2301e",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/44b74728e87b87c44f91f505758cad882573d7ea",
+      "width" : 64
+    } ],
+    "name" : "The 2nd Law",
+    "type" : "album",
+    "uri" : "spotify:album:3KuXEGcqLcnEYWnn3OEGy0"
+  }, {
+    "album_type" : "album",
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/0eFHYz8NmK75zSplL5qlfM"
+    },
+    "href" : "https://api.spotify.com/v1/albums/0eFHYz8NmK75zSplL5qlfM",
+    "id" : "0eFHYz8NmK75zSplL5qlfM",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/4ca55ab16f598335b52c9f2103708042d85e2ad2",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/cf11442e18cea9231a08aa730df0532eef5c9a8a",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/f6500569e0b98137a6d26eee33286c5bb9ff623c",
+      "width" : 64
+    } ],
+    "name" : "The Resistance",
+    "type" : "album",
+    "uri" : "spotify:album:0eFHYz8NmK75zSplL5qlfM"
+  }, {
+    "album_type" : "album",
+    "available_markets" : [ "AD", "AR", "AT", "BE", "BG", "BO", "BR", "CH", "CL", "CO", "CR", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "PA", "PE", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "UY" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/2EcBoQ1Hb39hgSUEgrtR3j"
+    },
+    "href" : "https://api.spotify.com/v1/albums/2EcBoQ1Hb39hgSUEgrtR3j",
+    "id" : "2EcBoQ1Hb39hgSUEgrtR3j",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/630dbe6ccd5b90c003a017753fba1b4d20748590",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/35cc35e7a60d2d567ba6c01da6e245449702f647",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/873579e6c5fe46db4f10a98adea3700943cfd94f",
+      "width" : 64
+    } ],
+    "name" : "HAARP (Live From Wembley Stadium)",
+    "type" : "album",
+    "uri" : "spotify:album:2EcBoQ1Hb39hgSUEgrtR3j"
+  }, {
+    "album_type" : "album",
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/7IEp2DUicr3uqt2BTEQfMX"
+    },
+    "href" : "https://api.spotify.com/v1/albums/7IEp2DUicr3uqt2BTEQfMX",
+    "id" : "7IEp2DUicr3uqt2BTEQfMX",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/630dbe6ccd5b90c003a017753fba1b4d20748590",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/a55b4d3161cd009af56160878e917d73a262ac2b",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/873579e6c5fe46db4f10a98adea3700943cfd94f",
+      "width" : 64
+    } ],
+    "name" : "HAARP (Live From Wembley Stadium)",
+    "type" : "album",
+    "uri" : "spotify:album:7IEp2DUicr3uqt2BTEQfMX"
+  }, {
+    "album_type" : "album",
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/0lw68yx3MhKflWFqCsGkIs"
+    },
+    "href" : "https://api.spotify.com/v1/albums/0lw68yx3MhKflWFqCsGkIs",
+    "id" : "0lw68yx3MhKflWFqCsGkIs",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/cc938203606c1673a4e32334967f3621ed6769fe",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/acf6bd01fe17c53a7ef0b92fe52d3590d57df13e",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/6c751d61a730ab14dca55b1c7d3ce1f7f838aa23",
+      "width" : 64
+    } ],
+    "name" : "Black Holes And Revelations",
+    "type" : "album",
+    "uri" : "spotify:album:0lw68yx3MhKflWFqCsGkIs"
+  }, {
+    "album_type" : "album",
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/0HcHPBu9aaF1MxOiZmUQTl"
+    },
+    "href" : "https://api.spotify.com/v1/albums/0HcHPBu9aaF1MxOiZmUQTl",
+    "id" : "0HcHPBu9aaF1MxOiZmUQTl",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/d90926f8a2c6c407a7140b4a38688cff7a28ecba",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/80035994478d52a38a52349f113c4e4cd217ec26",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/1518566e06fd58d45ae91ef374ed7fa759d42bdf",
+      "width" : 64
+    } ],
+    "name" : "Absolution",
+    "type" : "album",
+    "uri" : "spotify:album:0HcHPBu9aaF1MxOiZmUQTl"
+  }, {
+    "album_type" : "album",
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/5eJTvSeghTKoqN3Ly4TqEf"
+    },
+    "href" : "https://api.spotify.com/v1/albums/5eJTvSeghTKoqN3Ly4TqEf",
+    "id" : "5eJTvSeghTKoqN3Ly4TqEf",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/59712f57ed3543f3d9d5339582122020a04f872d",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/4468a39a981983624145f5c11022206628ff072e",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/b46d5faa0565f174bbe6e0f0b183ef5e5070003b",
+      "width" : 64
+    } ],
+    "name" : "Hullabaloo Soundtrack (Eastwest Release)",
+    "type" : "album",
+    "uri" : "spotify:album:5eJTvSeghTKoqN3Ly4TqEf"
+  }, {
+    "album_type" : "album",
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "UY" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/1Dh27pjT3IEdiRG9Se5uQn"
+    },
+    "href" : "https://api.spotify.com/v1/albums/1Dh27pjT3IEdiRG9Se5uQn",
+    "id" : "1Dh27pjT3IEdiRG9Se5uQn",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/ecb609f80a433a4bcf06c42e69821772140f0632",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/1df08bc3fac0a95d783417bddba0bba9a1da579d",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/ea2eabc1ce63838531d746386cac28d2f9e3ce4c",
+      "width" : 64
+    } ],
+    "name" : "Origin Of Symmetry",
+    "type" : "album",
+    "uri" : "spotify:album:1Dh27pjT3IEdiRG9Se5uQn"
+  }, {
+    "album_type" : "album",
+    "available_markets" : [ "CA", "US" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/1AP6uGYHdakRgwuWQsP5pK"
+    },
+    "href" : "https://api.spotify.com/v1/albums/1AP6uGYHdakRgwuWQsP5pK",
+    "id" : "1AP6uGYHdakRgwuWQsP5pK",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/ecb609f80a433a4bcf06c42e69821772140f0632",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/1df08bc3fac0a95d783417bddba0bba9a1da579d",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/ea2eabc1ce63838531d746386cac28d2f9e3ce4c",
+      "width" : 64
+    } ],
+    "name" : "Origin Of Symmetry (New 09 version)",
+    "type" : "album",
+    "uri" : "spotify:album:1AP6uGYHdakRgwuWQsP5pK"
+  }, {
+    "album_type" : "album",
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/6AyUVv7MnxxTuijp4WmrhO"
+    },
+    "href" : "https://api.spotify.com/v1/albums/6AyUVv7MnxxTuijp4WmrhO",
+    "id" : "6AyUVv7MnxxTuijp4WmrhO",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/5b0a4b5d2158678cde19e54da73a859eb18f01d2",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/2ff8ce6e047b4d1d9c7895e1b8aa0fe606adefc9",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/5826e1831b1bb069b63956f8b962b0a3ef0e0027",
+      "width" : 64
+    } ],
+    "name" : "Showbiz",
+    "type" : "album",
+    "uri" : "spotify:album:6AyUVv7MnxxTuijp4WmrhO"
+  }, {
+    "album_type" : "single",
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/5rKc4rGpfxZ0JhSZUCT21j"
+    },
+    "href" : "https://api.spotify.com/v1/albums/5rKc4rGpfxZ0JhSZUCT21j",
+    "id" : "5rKc4rGpfxZ0JhSZUCT21j",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/849eecf3c9df835181c2970c435ac2d008346ea3",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/8b6392caa83625135f0f53d6e2b0631bbe4c4c0b",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/8978459cc3ad68b39bd6dbda418625b06ba5d80c",
+      "width" : 64
+    } ],
+    "name" : "Defector",
+    "type" : "album",
+    "uri" : "spotify:album:5rKc4rGpfxZ0JhSZUCT21j"
+  }, {
+    "album_type" : "single",
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/0AWzqESBGB9VF77VKSCnQ8"
+    },
+    "href" : "https://api.spotify.com/v1/albums/0AWzqESBGB9VF77VKSCnQ8",
+    "id" : "0AWzqESBGB9VF77VKSCnQ8",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/849eecf3c9df835181c2970c435ac2d008346ea3",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/8b6392caa83625135f0f53d6e2b0631bbe4c4c0b",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/8978459cc3ad68b39bd6dbda418625b06ba5d80c",
+      "width" : 64
+    } ],
+    "name" : "The Handler",
+    "type" : "album",
+    "uri" : "spotify:album:0AWzqESBGB9VF77VKSCnQ8"
+  }, {
+    "album_type" : "single",
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/6lSAHNAK1Y2BuPy2jz3pnv"
+    },
+    "href" : "https://api.spotify.com/v1/albums/6lSAHNAK1Y2BuPy2jz3pnv",
+    "id" : "6lSAHNAK1Y2BuPy2jz3pnv",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/849eecf3c9df835181c2970c435ac2d008346ea3",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/8b6392caa83625135f0f53d6e2b0631bbe4c4c0b",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/8978459cc3ad68b39bd6dbda418625b06ba5d80c",
+      "width" : 64
+    } ],
+    "name" : "Reapers",
+    "type" : "album",
+    "uri" : "spotify:album:6lSAHNAK1Y2BuPy2jz3pnv"
+  }, {
+    "album_type" : "single",
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/5euz7PaWpdiVQCdMpBi29Y"
+    },
+    "href" : "https://api.spotify.com/v1/albums/5euz7PaWpdiVQCdMpBi29Y",
+    "id" : "5euz7PaWpdiVQCdMpBi29Y",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/849eecf3c9df835181c2970c435ac2d008346ea3",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/8b6392caa83625135f0f53d6e2b0631bbe4c4c0b",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/8978459cc3ad68b39bd6dbda418625b06ba5d80c",
+      "width" : 64
+    } ],
+    "name" : "Mercy",
+    "type" : "album",
+    "uri" : "spotify:album:5euz7PaWpdiVQCdMpBi29Y"
+  }, {
+    "album_type" : "single",
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/6p5gd9wYS8TAHQgc6HVuAf"
+    },
+    "href" : "https://api.spotify.com/v1/albums/6p5gd9wYS8TAHQgc6HVuAf",
+    "id" : "6p5gd9wYS8TAHQgc6HVuAf",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/849eecf3c9df835181c2970c435ac2d008346ea3",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/8b6392caa83625135f0f53d6e2b0631bbe4c4c0b",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/8978459cc3ad68b39bd6dbda418625b06ba5d80c",
+      "width" : 64
+    } ],
+    "name" : "Dead Inside",
+    "type" : "album",
+    "uri" : "spotify:album:6p5gd9wYS8TAHQgc6HVuAf"
+  }, {
+    "album_type" : "single",
+    "available_markets" : [ "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IT", "LT", "LU", "LV", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/5PjJxigUDDDrBhGO2FZ5sV"
+    },
+    "href" : "https://api.spotify.com/v1/albums/5PjJxigUDDDrBhGO2FZ5sV",
+    "id" : "5PjJxigUDDDrBhGO2FZ5sV",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/849eecf3c9df835181c2970c435ac2d008346ea3",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/8b6392caa83625135f0f53d6e2b0631bbe4c4c0b",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/8978459cc3ad68b39bd6dbda418625b06ba5d80c",
+      "width" : 64
+    } ],
+    "name" : "Psycho",
+    "type" : "album",
+    "uri" : "spotify:album:5PjJxigUDDDrBhGO2FZ5sV"
+  }, {
+    "album_type" : "single",
+    "available_markets" : [ "FR", "GB", "IE", "MX" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/2Pi6UiUNoEe93TIysnPLL7"
+    },
+    "href" : "https://api.spotify.com/v1/albums/2Pi6UiUNoEe93TIysnPLL7",
+    "id" : "2Pi6UiUNoEe93TIysnPLL7",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/56ee93ee3c86c3b244296ce1c9d2d01d4cc72285",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/7f638cc2aab755e84e01a06140e043267eace8ba",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/242ada455232de9d83935aab1503b5b7aa8a0d2e",
+      "width" : 64
+    } ],
+    "name" : "Panic Station",
+    "type" : "album",
+    "uri" : "spotify:album:2Pi6UiUNoEe93TIysnPLL7"
+  }, {
+    "album_type" : "single",
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "UY" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/59mabvRF9nMwrHvoLw0OCd"
+    },
+    "href" : "https://api.spotify.com/v1/albums/59mabvRF9nMwrHvoLw0OCd",
+    "id" : "59mabvRF9nMwrHvoLw0OCd",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/4cb45d9d84ae006a5fa9da99aaf824fefca55625",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/34cbdcc8e7950565e8a19a4e84a1d2a53168bd62",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/0494f06b8ef2be5756d72ed26181e8b728015101",
+      "width" : 64
+    } ],
+    "name" : "Follow Me (Jacques Lu Cont's Thin White Duke Mix)",
+    "type" : "album",
+    "uri" : "spotify:album:59mabvRF9nMwrHvoLw0OCd"
+  } ],
+  "limit" : 20,
+  "next" : "https://api.spotify.com/v1/artists/12Chz98pHFMPJEknJQMWvI/albums?offset=20&limit=20&album_type=single,album,compilation,appears_on,ep",
+  "offset" : 0,
+  "previous" : null,
+  "total" : 73
+}

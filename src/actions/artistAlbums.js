@@ -13,7 +13,6 @@ export function getArtistAlbums(artistId) {
 }
 
 function receiveArtistAlbums(json) {
-  console.log('Artist albums', json);
   return {
     type: types.RECEIVE_ARTIST_ALBUMS,
     albums: json.items

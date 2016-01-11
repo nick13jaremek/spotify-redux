@@ -11,7 +11,6 @@ export class App extends Component {
   }
 
   render() {
-    console.log('APp', this.props)
     return (
       <div {...this.props}>
         <NavigationBar />

@@ -25,7 +25,6 @@ const initialState = Map({
  * Returns: the new state with the 'items' field set to the artist albums provided as an argument
  */
 function receiveArtistAlbums(state, artistAlbums) {
-  console.log('receiveArtistAlbums', state, artistAlbums);
   var newState = fromJS({
     items: artistAlbums, // TODO: extract details from the correct property of the artistDetails object
     isFetching: false
@@ -43,7 +42,6 @@ function receiveArtistAlbums(state, artistAlbums) {
  * Returns: the new state with the 'isFetching' item set to true
  */
 function requestArtistAlbums(state) {
-  console.log('requestArtistAlbums', state);
   let newState = Map({
     isFetching: true
   });

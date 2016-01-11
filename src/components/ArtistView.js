@@ -8,7 +8,6 @@ import ArtistAlbums from './ArtistAlbums';
 
 export class ArtistView extends Component {
   constructor(props) {
-    console.log('ArtistView');
     super(props);
   }
 
@@ -23,8 +22,6 @@ export class ArtistView extends Component {
     const {id}  = this.props.params;
     const {artist} = this.props;
     const {albums} = this.props;
-    console.log('Artist', artist);
-    console.log('Albums', albums);
     return (
       <div className="container-fluid">
         <div className="row">
@@ -39,9 +36,8 @@ export class ArtistView extends Component {
 /*
  * This function injects some of the fields of the application state into this component props.
  */
-function mapStateToProps(state) {
+export function mapStateToProps(state) {
   const {artist, albums} = state;
-  console.log('mappedAlbums', albums.toJS());
   return {
     artist: artist.toJS(), // artist contains the fields: 'isFetching' and 'details' which are available when converting from Immutable objects to plain JS equivalents
     albums: albums.toJS()

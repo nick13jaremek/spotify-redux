@@ -7,8 +7,7 @@ export default class ArtistAlbums extends Component {
 
   render() {
     const {artist, albums} = this.props;
-    console.log('ArtistAlbums::artist', artist);
-    console.log('ArtistAlbums::albums', albums);
+
     return (
       <div className="col-md-9 col-sm-8">
         <h1 className="page-header">Dashboard</h1>

@@ -24,7 +24,6 @@ const initialState = Map({
  * Returns: the new state with the 'details' field set to the artist details provided as an argument
  */
 function receiveArtistDetails(state, artistDetails) {
-  console.log('receiveArtistDetails', state, artistDetails);
   var newState = fromJS({
     details: artistDetails, // TODO: extract details from the correct property of the artistDetails object
     isFetching: false
@@ -42,7 +41,6 @@ function receiveArtistDetails(state, artistDetails) {
  * Returns: the new state with the 'isFetching' item set to true
  */
 function requestArtistDetails(state) {
-  console.log('requestArtistDetails', state);
   let newState = Map({
     isFetching: true
   });
