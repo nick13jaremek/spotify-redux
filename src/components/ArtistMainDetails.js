@@ -1,18 +1,47 @@
 import React, {Component} from 'react';
 
+const ARTIST_PLACEHOLDER_IMAGE = '/assets/album-placeholder.png';
+
 export default class ArtistMainDetails extends Component {
 
-  render() {
+  renderArtistDetails() {
+    const {details} = this.props;
+    if (details.hasOwnProperty('length') && details.length === 0) {
+      return <div></div>;
+    }
+
+    const image = (details.images && details.images.length > 0) ? details.images[0].url : ARTIST_PLACEHOLDER_IMAGE;
+
+    const name = (details.name) ? <li className="list-group-item"><b>Name:</b> <span>{details.name}</span></li> : null;
+
+    const genre = (details.genres && details.genres.length > 0) ?
+      <li className="list-group-item"><b>Genre:</b> <span>{details.genres[0]}</span></li> : null;
+
+    const popularity = details.popularity ?
+      <li className="list-group-item"><b>Popularity:</b> <span>{details.popularity}</span></li> : null;
+
+    const followers = details.followers ?
+      <li className="list-group-item"><b>Followers:</b> <span>{details.followers.total}</span></li> : null;
+
     return (
       <div className="col-md-3 col-sm-4">
         <div className="thumbnail">
-          <img src='/assets/album-placeholder.png' className="img-responsive center-block fxd-img"/>
+          <img src={image} className="img-responsive center-block fxd-img"/>
         </div>
         <ul className="list-group">
-          <li className="list-group-item"><b>Name:</b> <span>Bruce Springsteen</span></li>
-          <li className="list-group-item"><b>Genre(s):</b> <span>Roots Rock</span></li>
-          <li className="list-group-item"><b>Number of albums:</b> <span>32</span></li>
+          {name}
+          {genre}
+          {popularity}
+          {followers}
         </ul>
+      </div>
+    );
+  }
+
+  render() {
+    return (
+      <div>
+        {this.renderArtistDetails()}
       </div>
     );
   }
