@@ -36,9 +36,7 @@ export default class ArtistAlbums extends Component {
   }
 
   render() {
-
     return (
-
       <div className="col-md-9 col-sm-9 padded">
         {this.renderAlbums()}
       </div>
