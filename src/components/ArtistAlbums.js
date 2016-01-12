@@ -1,17 +1,47 @@
 import React, {Component} from 'react';
+import AlbumCard from './AlbumCard';
 
 export default class ArtistAlbums extends Component {
   constructor(props) {
     super(props);
   }
 
+  renderAlbums() {
+    const {albums} = this.props;
+
+    console.log('Albums', albums);
+    const albumsPerRow = 3;
+    let result = [];
+
+    if (!albums || !albums.length) {
+      return <div>No albums</div>;
+    }
+
+    for (let i = 0; i < albums.length; i += albumsPerRow) {
+      let albumCards = albums
+        .slice(i, i + albumsPerRow)
+        .map((album) => {
+          return <AlbumCard key={album.id} album={album} />
+        });
+
+      if (albumCards.length < albumsPerRow) {
+        for (let j = 0; j < albumsPerRow - albumCards.length + 1; j++) {
+          albumCards.push(<div className="col-md-3 col-sm-3" key={'album-placeholder-' + j}></div>);
+        }
+      }
+
+      result.push(<div className="row equal" key={'albums-row-' + i}>{albumCards}</div>);
+    }
+
+    return result;
+  }
+
   render() {
-    const {artist, albums} = this.props;
 
     return (
-      <div className="col-md-9 col-sm-8">
-        <h1 className="page-header">Dashboard</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+
+      <div className="col-md-9 col-sm-9">
+        {this.renderAlbums()}
       </div>
     );
   }

@@ -3,10 +3,17 @@ import {expect} from 'chai';
 import ReactDOM from 'react-dom';
 import ReactTestUtils from 'react-addons-test-utils';
 
-import ArtistAlbums from '../../src/components/ArtistAlbums';
+const ARTIST_FIXTURE = require('../fixtures/artists').artists.items[0];
+const ALBUMS_FIXTURE = require('../fixtures/albums').items;
 
-function setup() {
-  let props = {};
+import ArtistAlbums from '../../src/components/ArtistAlbums';
+import AlbumCard from '../../src/components/AlbumCard';
+
+function setup(data) {
+  let props = {
+    artist: data.artist || null,
+    albums: data.albums || null
+  };
 
   let renderer = ReactTestUtils.createRenderer();
   renderer.render(<ArtistAlbums {...props} />);
@@ -19,31 +26,59 @@ function setup() {
   };
 }
 
-describe('ArtistAlbums component', () => {
+describe('ArtistAlbums default component', () => {
 
   it('renders the component', () => {
-    const {output} = setup();
+    const {output} = setup({});
 
     expect(output.type).to.equal('div');
-    expect(output.props.className).to.equal('col-md-9 col-sm-8');
-    expect(output.props.children).to.be.an('array');
-    expect(output.props.children).to.have.length(2);
+    expect(output.props.className).to.equal('col-md-9 col-sm-9');
+    expect(output.props.children).to.be.an('object');
 
-    const [header, text] = output.props.children;
+    const placeholder = output.props.children;
 
-    expect(header.type).to.equal('h1');
-    expect(header.props.className).to.equal('page-header');
-    expect(header.props.children).to.be.a('string');
-    expect(header.props.children).to.equal('Dashboard');
+    expect(placeholder.type).to.equal('div');
+    expect(placeholder.props.children).to.be.a('string');
+    expect(placeholder.props.children).to.equal('No albums');
 
-    expect(text.type).to.equal('p');
-    expect(text.props.children).to.be.a('string');
-    expect(text.props.children).to.equal('This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.')
   });
 
-  it('has not props', () => {
-    const {props} = setup();
-    expect(props).to.be.empty;
+  it('has no props', () => {
+    const {props} = setup({});
+    expect(props).to.have.property('artist');
+    expect(props.artist).to.be.null;
+    expect(props).to.have.property('albums');
+    expect(props.albums).to.be.null;
+  });
+
+});
+
+describe('ArtistAlbums populated component', () => {
+
+  it('renders the component', () => {
+    const {output} = setup({artist: ARTIST_FIXTURE, albums: ALBUMS_FIXTURE});
+
+    expect(output.type).to.equal('div');
+    expect(output.props.className).to.equal('col-md-9 col-sm-9');
+    expect(output.props.children).to.be.an('array');
+    expect(output.props.children).to.have.length(7)
+
+    const rows = output.props.children;
+
+    rows.forEach((row) => {
+      expect(row.type).to.equal('div');
+      expect(row.props.className).to.equal('row equal');
+      expect(row.props.children).to.be.an('array');
+      expect(row.props.children).to.have.length(3);
+    });
+  });
+
+  it('has no props', () => {
+    const {props} = setup({artist: ARTIST_FIXTURE, albums: ALBUMS_FIXTURE});
+    expect(props).to.have.property('artist');
+    expect(props.artist).to.equal(ARTIST_FIXTURE);
+    expect(props).to.have.property('albums');
+    expect(props.albums).to.equal(ALBUMS_FIXTURE);
   });
 
 });
