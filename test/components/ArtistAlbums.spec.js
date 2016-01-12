@@ -32,7 +32,7 @@ describe('ArtistAlbums default component', () => {
     const {output} = setup({});
 
     expect(output.type).to.equal('div');
-    expect(output.props.className).to.equal('col-md-9 col-sm-9');
+    expect(output.props.className).to.equal('col-md-9 col-sm-9 padded');
     expect(output.props.children).to.be.an('object');
 
     const placeholder = output.props.children;
@@ -59,7 +59,7 @@ describe('ArtistAlbums populated component', () => {
     const {output} = setup({artist: ARTIST_FIXTURE, albums: ALBUMS_FIXTURE});
 
     expect(output.type).to.equal('div');
-    expect(output.props.className).to.equal('col-md-9 col-sm-9');
+    expect(output.props.className).to.equal('col-md-9 col-sm-9 padded');
     expect(output.props.children).to.be.an('array');
     expect(output.props.children).to.have.length(7)
 

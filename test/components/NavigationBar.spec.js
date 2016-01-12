@@ -87,9 +87,9 @@ describe('NavigationBar component', () => {
     expect(selector.type).to.equal('ul');
     expect(selector.props.className).to.equal('nav navbar-nav navbar-right');
     expect(selector.props.children).to.be.an('array');
-    expect(selector.props.children).to.have.length(3);
+    expect(selector.props.children).to.have.length(2);
 
-    let [artists, albums, songs] = selector.props.children;
+    let [artists, albums] = selector.props.children;
 
     // Artists
     expect(artists.type).to.equal('li');
@@ -110,16 +110,6 @@ describe('NavigationBar component', () => {
     expect(albumsLink.props.to).to.equal('/albums');
     expect(albumsLink.props.children).to.be.a('string');
     expect(albumsLink.props.children).to.equal('Albums');
-
-    // Songs
-    expect(songs.type).to.equal('li');
-    expect(songs.props.role).to.equal('presentation');
-    expect(songs.props.children).to.be.an('object');
-    let songsLink = songs.props.children;
-    expect(songsLink.type).to.equal(Link);
-    expect(songsLink.props.to).to.equal('/songs');
-    expect(songsLink.props.children).to.be.a('string');
-    expect(songsLink.props.children).to.equal('Songs');
   });
 
   it('has no props', () => {

@@ -31,7 +31,7 @@ describe('AlbumCard no-data component', () => {
     const {output} = setup({});
 
     expect(output.type).to.equal('div');
-    expect(output.props.className).to.equal('col-md-2');
+    expect(output.props.className).to.equal('col-md-2 col-sm-2');
     expect(output.props.children).to.be.an('object');
 
     const thumbnail = output.props.children;
@@ -72,7 +72,7 @@ describe('AlbumCard populated component', () => {
     const {output} = setup({album: ALBUM_FIXTURE});
 
     expect(output.type).to.equal('div');
-    expect(output.props.className).to.equal('col-md-2');
+    expect(output.props.className).to.equal('col-md-2 col-sm-2');
     expect(output.props.children).to.be.an('object');
 
     const thumbnail = output.props.children;
