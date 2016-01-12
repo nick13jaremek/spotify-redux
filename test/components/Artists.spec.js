@@ -14,6 +14,9 @@ function setup(items) {
     artists: {
       items: items,
       isFetching: false
+    },
+    inputs: {
+      intput: ''
     }
   };
 

@@ -114,10 +114,12 @@ describe('SearchBar component', () => {
     const store = mockStore({
       artists: Map({
         isFetching: false,
-        items: [],
+        items: []
+      }),
+      inputs: Map({
         input: ''
       })
-    }, [{type: actions.SET_ARTIST_NAME, value: 'Muse'}, {type: actions.REQUEST_ARTISTS}]); // Check that two actions are dispatched
+    }, [{type: actions.SET_INPUT_VALUE, value: 'Muse'}, {type: actions.REQUEST_ARTISTS}]); // Check that two actions are dispatched
 
     const spy = new sinon.spy(store, 'dispatch');
 
@@ -134,10 +136,12 @@ describe('SearchBar component', () => {
     const store = mockStore({
       artists: Map({
         isFetching: false,
-        items: [],
+        items: []
+      }),
+      inputs: Map({
         input: ''
       })
-    }, [{type: actions.SET_ARTIST_NAME, value: 'Muse'}]); // Only one action should be dispatched
+    }, [{type: actions.SET_INPUT_VALUE, value: 'Muse'}]); // Only one action should be dispatched
 
     const spy = new sinon.spy(store, 'dispatch');
 

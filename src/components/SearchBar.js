@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import {getArtists, setArtistName} from '../actions/artists';
+import {getArtists} from '../actions/artists';
+import {setSearchBarValue} from '../actions/inputs';
+
 import {connect} from 'react-redux';
 
 export default class SearchBar extends Component {
@@ -12,13 +14,11 @@ export default class SearchBar extends Component {
   }
 
   setInputFieldValue(event) {
-    console.log('setArtistName', event);
     const {dispatch} = this.props;
-    dispatch(setArtistName(event.target.value));
+    dispatch(setSearchBarValue(event.target.value));
   }
 
   searchItems(itemType) {
-    console.log('searchItems');
     const value = this.props.value;
     const {dispatch} = this.props; // Obtain the dispatch function from the store object passed to the App component by the 'Provider' parent component
     if (itemType === 'artists') {

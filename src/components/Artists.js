@@ -13,7 +13,8 @@ export class Artists extends Component {
   renderArtists() {
     const chunk = 5;
     const {dispatch} = this.props; // Obtain the dispatch function from the store object passed to the App component by the 'Provider' parent component
-    const {items, input} = this.props.artists;
+    const {items} = this.props.artists;
+    const {input} = this.props.inputs;
 
     let result = [];
 
@@ -53,9 +54,10 @@ export class Artists extends Component {
 * This function injects some of the fields of the application state into this component props.
 */
 function mapStateToProps(state) {
-  const {artists} = state;
+  const {artists, inputs} = state;
   return {
-    artists: artists.toJS() // artists contains to fields: 'isFetching' and 'items' which are available when converting from Immutable objects to plain JS equivalents
+    artists: artists.toJS(), // artists contains two fields: 'isFetching' and 'items' which are available when converting from Immutable objects to plain JS equivalents
+    inputs: inputs.toJS() // inputs contains one field: 'input', which contains the value of some view's input type element
   };
 }
 
