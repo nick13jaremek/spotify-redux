@@ -27,7 +27,6 @@ export default class NavigationBar extends Component {
             <ul className="nav navbar-nav navbar-right">
               <li role="presentation"><Link to="/artists" activeStyle={ACTIVE}>Artists</Link></li>
               <li role="presentation"><Link to="/albums" activeStyle={ACTIVE}>Albums</Link></li>
-              <li role="presentation"><Link to="/songs" activeStyle={ACTIVE}>Songs</Link></li>
             </ul>
           </div>
         </div>

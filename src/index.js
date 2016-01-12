@@ -10,7 +10,6 @@ import {ArtistsContainer} from './components/Artists';
 import {ArtistViewContainer} from './components/ArtistView';
 import {AlbumViewContainer} from './components/AlbumView';
 import Albums from './components/Albums';
-import Songs from './components/Songs';
 import Index from './components/Index';
 
 require('./style/main.scss');
@@ -26,7 +25,6 @@ const routes = <Route path="/" component={AppContainer}>
   <Route path="artist/:id" component={ArtistViewContainer} />
   <Route path="albums" component={Albums} />
   <Route path="album/:id" component={AlbumViewContainer} />
-  <Route path="songs" component={Songs} />
 </Route>;
 
 ReactDOM.render(
