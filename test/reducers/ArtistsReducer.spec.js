@@ -9,7 +9,7 @@ describe('Artists reducer',  () => {
     const initialState = Map();
     const action = {
       type: 'RECEIVE_ARTISTS',
-      artists: artistsList
+      artists: artistsList,
     };
 
     const nextState = reducer(initialState, action);
@@ -55,7 +55,8 @@ describe('Artists reducer',  () => {
 
     expect(nextState).to.equal(fromJS({
       isFetching: false,
-      items: []
+      items: [],
+      input: ''
     }));
   });
 });

@@ -9,7 +9,8 @@ import * as types from '../constants/ActionTypes';
 */
 const initialState = Map({
   isFetching: false,
-  items: List()
+  items: List(),
+  input: ''
 });
 
 /*
@@ -46,6 +47,12 @@ function requestArtists(state) {
   return state.merge(newState);
 }
 
+function setArtistName(state, name) {
+  let newState = Map({
+    input: name
+  });
+  return state.merge(newState);
+}
 /*
 * This is the main function which is responsible of reducing a state to a new one for a registered action, otherwise
 * it returns the same state it received.
@@ -63,6 +70,9 @@ export default function artists(state=initialState, action) {
 
     case types.REQUEST_ARTISTS:
       return requestArtists(state);
+
+    case types.SET_ARTIST_NAME:
+      return  setArtistName(state, action.value);
 
     default:
       return state;

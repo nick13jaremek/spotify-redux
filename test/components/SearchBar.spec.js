@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+import {Map} from 'immutable';
 const chai = require('chai');
 const sinon = require('sinon');
 const sinonChai = require('sinon-chai');
@@ -43,7 +43,7 @@ describe('SearchBar component', () => {
 
   it('renders the component', () => {
 
-    const {output} = setup();
+    const {output} = setup({});
 
     expect(output.type).to.equal('div');
     expect(output.props.className).to.equal('container');
@@ -109,25 +109,44 @@ describe('SearchBar component', () => {
     expect(props.dispatch).to.be.a('function');
   });
 
-  it('dispatches search action on button click', () => {
+  it('dispatches \'artists\' search action on button click', () => {
 
     const store = mockStore({
       artists: Map({
         isFetching: false,
-        items: []
+        items: [],
+        input: ''
       })
-    }, [{type: actions.RECEIVE_ARTIST_ALBUMS}]);
+    }, [{type: actions.SET_ARTIST_NAME, value: 'Muse'}, {type: actions.REQUEST_ARTISTS}]); // Check that two actions are dispatched
 
-    let spy = sinon.spy();
-    const {output, props} = setup({dispatch: spy, dataType: 'artists'});
+    const spy = new sinon.spy(store, 'dispatch');
+
+    const {output} = setup({dispatch: store.dispatch, dataType: 'artists'});
     const input = shallowTestUtils.findAllWithType(output, 'input')[0];
-    input.value = 'Muse';
-    ReactTestUtils.Simulate.change(input);
+    input.props.onChange({target: {value: 'Muse'}});
 
-    console.log('Input', input);
     const button = shallowTestUtils.findAllWithType(output, 'button')[0];
-    console.log('Button', button);
     button.props.onClick();
-    expect(spy).to.have.been.called;
+    expect(spy).to.have.been.calledTwice;
+  });
+
+  it('dispatches an action to extract the input field value', () => {
+    const store = mockStore({
+      artists: Map({
+        isFetching: false,
+        items: [],
+        input: ''
+      })
+    }, [{type: actions.SET_ARTIST_NAME, value: 'Muse'}]); // Only one action should be dispatched
+
+    const spy = new sinon.spy(store, 'dispatch');
+
+    const {output} = setup({dispatch: store.dispatch, dataType: 'stuff'}); // The dataType 'stuff' doest not trigger any dispatch action
+    const input = shallowTestUtils.findAllWithType(output, 'input')[0];
+    input.props.onChange({target: {value: 'Muse'}});
+
+    const button = shallowTestUtils.findAllWithType(output, 'button')[0];
+    button.props.onClick();
+    expect(spy).to.have.been.calledOnce; // The only 'dispatch' action should be the one related to the 'setArtistName' function
   });
 });

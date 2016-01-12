@@ -1,20 +1,28 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import {getArtists} from '../actions/artists';
+import {getArtists, setArtistName} from '../actions/artists';
+import {connect} from 'react-redux';
 
 export default class SearchBar extends Component {
   constructor(props) {
     super(props);
     const {dataType} = this.props;
     this.searchItems = this.searchItems.bind(this, dataType);
+    this.setInputFieldValue = this.setInputFieldValue.bind(this);
+  }
+
+  setInputFieldValue(event) {
+    console.log('setArtistName', event);
+    const {dispatch} = this.props;
+    dispatch(setArtistName(event.target.value));
   }
 
   searchItems(itemType) {
-    console.log('SearchItems');
+    console.log('searchItems');
+    const value = this.props.value;
     const {dispatch} = this.props; // Obtain the dispatch function from the store object passed to the App component by the 'Provider' parent component
     if (itemType === 'artists') {
-      const artistName = ReactDOM.findDOMNode(this.refs.artistName).value;
-      dispatch(getArtists(artistName));
+      dispatch(getArtists(value));
     }
   }
 
@@ -29,7 +37,7 @@ export default class SearchBar extends Component {
               <form>
                 <div className="col-md-6 col-md-offset-3">
                   <div className="input-group input-group-lg">
-                    <input ref="artistName" type="text" className="form-control" placeholder="E.g. Leonard Cohen" />
+                    <input ref="artistName" type="text" className="form-control" placeholder="E.g. Leonard Cohen" onChange={this.setInputFieldValue} />
                     <span className="input-group-btn">
                       <button className="btn btn-default" type="button" onClick={this.searchItems}>Go!</button>
                     </span>

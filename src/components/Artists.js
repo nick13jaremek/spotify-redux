@@ -13,7 +13,7 @@ export class Artists extends Component {
   renderArtists() {
     const chunk = 5;
     const {dispatch} = this.props; // Obtain the dispatch function from the store object passed to the App component by the 'Provider' parent component
-    const {items} = this.props.artists;
+    const {items, input} = this.props.artists;
 
     let result = [];
 
@@ -34,7 +34,7 @@ export class Artists extends Component {
     }
 
     if (!result || result.length === 0) {
-      return <SearchBar dataType="artists" dispatch={dispatch}/>;
+      return <SearchBar dataType="artists" dispatch={dispatch} value={input} />;
     }
 
     return result;
