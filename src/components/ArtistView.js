@@ -22,10 +22,11 @@ export class ArtistView extends Component {
     const {id}  = this.props.params;
     const {artist} = this.props;
     const {albums} = this.props;
+
     return (
       <div className="container-fluid">
         <div className="row">
-          <ArtistMainDetails details={artist.details} />
+          <ArtistMainDetails details={artist.details} albums={albums.total} />
           <ArtistAlbums albums={albums.items} artist={artist.details}/>
         </div>
       </div>

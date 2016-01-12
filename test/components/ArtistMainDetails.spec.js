@@ -8,11 +8,13 @@ import ArtistMainDetails from '../../src/components/ArtistMainDetails';
 import {ALBUM_PLACEHOLDER} from '../../src/constants/Config';
 
 const ARTIST_FIXTURE = require('../fixtures/artists').artists.items[0];
+const ALBUM_FIXTURE = require('../fixtures/albums').items;
 
 function setup(data) {
 
   let props = {
-    details: data
+    details: data.artist || [],
+    albums: data.albums || 0
   };
 
   let renderer = ReactTestUtils.createRenderer();
@@ -29,7 +31,7 @@ function setup(data) {
 describe('ArtistMainDetails empty component', () => {
 
   it('renders the component without data', () => {
-    const {output} = setup([]);
+    const {output} = setup({});
 
     expect(output.type).to.equal('div');
     expect(output.props.children).to.be.an('object');
@@ -39,11 +41,15 @@ describe('ArtistMainDetails empty component', () => {
   });
 
   it('has no props', () => {
-    const {props} = setup([]);
+    const {props} = setup({});
 
     expect(props).to.have.property('details');
     expect(props.details).to.be.an('array');
     expect(props.details).to.be.empty;
+
+    expect(props).to.have.property('albums');
+    expect(props.albums).to.be.a('number');
+    expect(props.albums).to.equal(0);
   });
 });
 
@@ -54,7 +60,7 @@ describe('ArtistMainDetails populated component', () => {
     const data = ARTIST_FIXTURE;
     data.genres = ['electro-rock'];
 
-    const {output} = setup(data);
+    const {output} = setup({artist: ARTIST_FIXTURE, albums: ALBUM_FIXTURE.length});
     console.log('OUTPUT', output);
     expect(output.type).to.equal('div');
     expect(output.props.children).to.be.an('object');
@@ -80,9 +86,9 @@ describe('ArtistMainDetails populated component', () => {
     expect(list.type).to.equal('ul');
     expect(list.props.className).to.equal('list-group');
     expect(list.props.children).to.be.an('array');
-    expect(list.props.children).to.have.length(4);
+    expect(list.props.children).to.have.length(5);
 
-    const [name, genre, popularity, followers] = list.props.children;
+    const [name, genre, popularity, followers, albums] = list.props.children;
 
     //==========================NAME==========================//
     expect(name.type).to.equal('li');
@@ -135,11 +141,24 @@ describe('ArtistMainDetails populated component', () => {
     expect(followersLabel.props.children).to.equal('Followers: ');
     expect(followersValue.type).to.equal('span');
     expect(followersValue.props.children).to.equal(ARTIST_FIXTURE.followers.total);
+
+    //=======================ALBUMS=======================//
+    expect(albums.type).to.equal('li');
+    expect(albums.props.className).to.equal('list-group-item');
+    expect(albums.props.children).to.be.an('array');
+    expect(albums.props.children).to.have.length(2);
+
+    const [albumsLabel, albumsValue] = albums.props.children;
+
+    expect(albumsLabel.type).to.equal('b');
+    expect(albumsLabel.props.children).to.equal('Albums: ');
+    expect(albumsValue.type).to.equal('span');
+    expect(albumsValue.props.children).to.equal(ALBUM_FIXTURE.length);
   });
 
   it('renders the component without artist details except for image', () => {
-    const {output} = setup({url: ''});
-
+    const {output} = setup({artist: {url: ''}});
+    console.log('output', output);
     /*
     * Use the 'shallowTestUtils' library to find DOM elements in the component
     * obtained as an output from the ReactTestUtils.Renderer object.
@@ -149,12 +168,24 @@ describe('ArtistMainDetails populated component', () => {
 
     const list = shallowTestUtils.findAllWithType(output, 'ul')[0];
     expect(list.props.children).to.be.an('array');
-    expect(list.props.children).to.have.length(4);
+    expect(list.props.children).to.have.length(5);
 
-    const [name, genre, popularity, followers] = list.props.children;
+    const [name, genre, popularity, followers, albums] = list.props.children;
     expect(name).to.equal(null);
     expect(genre).to.equal(null);
     expect(popularity).to.equal(null);
     expect(followers).to.equal(null);
+
+    expect(albums.type).to.equal('li');
+    expect(albums.props.className).to.equal('list-group-item');
+    expect(albums.props.children).to.be.an('array');
+    expect(albums.props.children).to.have.length(2);
+
+    const [albumsLabel, albumsValue] = albums.props.children;
+
+    expect(albumsLabel.type).to.equal('b');
+    expect(albumsLabel.props.children).to.equal('Albums: ');
+    expect(albumsValue.type).to.equal('span');
+    expect(albumsValue.props.children).to.equal(0);
   });
 });

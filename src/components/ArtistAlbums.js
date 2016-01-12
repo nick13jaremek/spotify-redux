@@ -9,7 +9,6 @@ export default class ArtistAlbums extends Component {
   renderAlbums() {
     const {albums} = this.props;
 
-    console.log('Albums', albums);
     const albumsPerRow = 3;
     let result = [];
 

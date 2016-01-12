@@ -10,7 +10,8 @@ import * as types from '../constants/ActionTypes';
  */
 const initialState = Map({
   isFetching: false,
-  items: List()
+  items: List(),
+  total: 0
 });
 
 /*
@@ -24,10 +25,11 @@ const initialState = Map({
  *
  * Returns: the new state with the 'items' field set to the artist albums provided as an argument
  */
-function receiveArtistAlbums(state, artistAlbums) {
+function receiveArtistAlbums(state, artistAlbums, totalAlbums) {
   var newState = fromJS({
     items: artistAlbums, // TODO: extract details from the correct property of the artistDetails object
-    isFetching: false
+    isFetching: false,
+    total: totalAlbums
   });
   return state.merge(newState);
 }
@@ -61,7 +63,7 @@ function requestArtistAlbums(state) {
 export default function artistAlbums(state=initialState, action) {
   switch(action.type) {
     case types.RECEIVE_ARTIST_ALBUMS:
-      return receiveArtistAlbums(state, action.albums);
+      return receiveArtistAlbums(state, action.albums, action.total);
 
     case types.REQUEST_ARTIST_ALBUMS:
       return requestArtistAlbums(state);

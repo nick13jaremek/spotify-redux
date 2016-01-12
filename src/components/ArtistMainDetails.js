@@ -5,8 +5,7 @@ import {ALBUM_PLACEHOLDER} from '../../src/constants/Config';
 export default class ArtistMainDetails extends Component {
 
   renderArtistDetails() {
-    const {details} = this.props;
-    console.log('Details', details);
+    const {details, albums} = this.props;
     if (details.hasOwnProperty('length') && details.length === 0) {
       return <div></div>;
     }
@@ -34,6 +33,7 @@ export default class ArtistMainDetails extends Component {
           {genre}
           {popularity}
           {followers}
+          <li className="list-group-item"><b>Albums: </b><span>{albums}</span></li>
         </ul>
       </div>
     );

@@ -15,7 +15,8 @@ export function getArtistAlbums(artistId) {
 function receiveArtistAlbums(json) {
   return {
     type: types.RECEIVE_ARTIST_ALBUMS,
-    albums: json.items
+    albums: json.items,
+    total: json.total
   };
 }
 
