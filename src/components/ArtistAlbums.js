@@ -25,7 +25,7 @@ export default class ArtistAlbums extends Component {
 
       if (albumCards.length < albumsPerRow) {
         for (let j = 0; j < albumsPerRow - albumCards.length + 1; j++) {
-          albumCards.push(<div className="col-md-3 col-sm-3" key={'album-placeholder-' + j}></div>);
+          albumCards.push(<div className="col-md-2 col-sm-2" key={'album-placeholder-' + j}></div>);
         }
       }
 
@@ -39,7 +39,7 @@ export default class ArtistAlbums extends Component {
 
     return (
 
-      <div className="col-md-9 col-sm-9">
+      <div className="col-md-9 col-sm-9 padded">
         {this.renderAlbums()}
       </div>
     );
