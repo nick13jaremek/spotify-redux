@@ -55,7 +55,8 @@ describe('Artists reducer',  () => {
 
     expect(nextState).to.equal(fromJS({
       isFetching: false,
-      items: []
+      items: [],
+      details: {}
     }));
   });
 });

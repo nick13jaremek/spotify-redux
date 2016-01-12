@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {getAlbumDetails} from '../actions/albumDetails';
+import {getAlbumDetails} from '../actions/albums';
 
 import AlbumMainDetails from './AlbumMainDetails';
 import AlbumSongs from './AlbumSongs';
@@ -17,12 +17,12 @@ export class AlbumView extends Component {
   }
 
   render() {
-    const {album} = this.props;
+    const {albums} = this.props;
     return (
       <div className="container-fluid">
         <div className="row">
-          <AlbumMainDetails details={album.details} />
-          <AlbumSongs details={album.details} />
+          <AlbumMainDetails details={albums.details} />
+          <AlbumSongs details={albums.details} />
         </div>
       </div>
     );
@@ -30,9 +30,9 @@ export class AlbumView extends Component {
 }
 
 export function mapStateToProps(state) {
-  const {album} = state;
+  const {albums} = state;
   return {
-    album: album.toJS()
+    albums: albums.toJS()
   };
 }
 

@@ -28,14 +28,16 @@ function setup() {
    * each action.
    */
   const store = mockStore({
-    artist: {
+    artists: Map({
       isFetching: false,
-      details: {}
-    },
-    albums: {
-      isFetching: false,
+      details: {},
       items: []
-    }
+    }),
+    albums: Map({
+      isFetching: false,
+      items: [],
+      details: {}
+    })
   }, [{type: actions.REQUEST_ARTIST_DETAILS}, {type: actions.REQUEST_ARTIST_ALBUMS}]);
 
 
@@ -46,13 +48,15 @@ function setup() {
     params: {
       id: ARTIST_ID
     },
-    artist: { // Reproduce the artistDetails reducer's state structure with fixture
+    artists: { // Reproduce the artistDetails reducer's state structure with fixture
       isFetching: false,
-      details: ARTIST_FIXTURE
+      details: ARTIST_FIXTURE,
+      items: []
     },
     albums: { // Reproduce the artistAlbums reducer's state structure with fixture
       isFetching: false,
-      items: ALBUMS_FIXTURE
+      items: ALBUMS_FIXTURE,
+      details: {}
     },
     dispatch: store.dispatch
   };
@@ -75,13 +79,15 @@ function setup() {
 function smartSetup() {
 
   const store = mockStore({
-    artist: Map({
+    artists: Map({
       isFetching: false,
-      details: ARTIST_FIXTURE
+      details: ARTIST_FIXTURE,
+      items: []
     }),
     albums: Map({
       isFetching: false,
-      items: ALBUMS_FIXTURE
+      items: ALBUMS_FIXTURE,
+      details: {}
     })
   }, [{type: actions.REQUEST_ARTIST_DETAILS}, {type: actions.REQUEST_ARTIST_ALBUMS}]);
 
@@ -145,8 +151,8 @@ describe('ArtistView component', () => {
     expect(props.params.id).to.be.defined;
     expect(props.params.id).to.equal(ARTIST_ID);
 
-    expect(props.artist.details).to.be.defined;
-    expect(props.artist.details).to.equal(ARTIST_FIXTURE);
+    expect(props.artists.details).to.be.defined;
+    expect(props.artists.details).to.equal(ARTIST_FIXTURE);
 
     expect(props.albums.items).to.be.defined;
     expect(props.albums.items).to.equal(ALBUMS_FIXTURE);
@@ -169,9 +175,9 @@ describe('ArtistViewContainer component', () => {
     expect(props.dispatch).to.be.defined;
     expect(props.dispatch).to.be.a('function');
 
-    expect(props.artist).to.have.property('isFetching');
-    expect(props.artist).to.have.property('details');
-    expect(props.artist.details).to.equal(ARTIST_FIXTURE);
+    expect(props.artists).to.have.property('isFetching');
+    expect(props.artists).to.have.property('details');
+    expect(props.artists.details).to.equal(ARTIST_FIXTURE);
 
     expect(props.albums).to.have.property('isFetching');
     expect(props.albums).to.have.property('items');

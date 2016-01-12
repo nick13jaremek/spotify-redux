@@ -11,6 +11,7 @@ import * as types from '../constants/ActionTypes';
 const initialState = Map({
   isFetching: false,
   items: List(),
+  details: Map(),
   total: 0
 });
 
@@ -51,6 +52,41 @@ function requestArtistAlbums(state) {
 }
 
 /*
+ * Given an artists' albums which should come from an already-finished request to Spotify's API, this function
+ * returns a new state with the 'items' field set to the array containing the artist's albums which is provided as
+ * an argument.
+ *
+ * Params:
+ *   state: the current state to use in order to generate the next one
+ *   artistAlbums: an object containing the requested artist albums
+ *
+ * Returns: the new state with the 'items' field set to the artist albums provided as an argument
+ */
+function receiveAlbumDetails(state, albumDetails) {
+  var newState = fromJS({
+    details: albumDetails, // TODO: extract details from the correct property of the artistDetails object
+    isFetching: false
+  });
+  return state.merge(newState);
+}
+
+/*
+ * Sets the state's 'isFetching' field to true, in order to indicate that a request to fetch the a Spotify artist's albums
+ * is currently in progress
+ *
+ * Params:
+ *   state: the current state to use in order to generate the next one
+ *
+ * Returns: the new state with the 'isFetching' item set to true
+ */
+function requestAlbumDetails(state) {
+  let newState = Map({
+    isFetching: true
+  });
+  return state.merge(newState);
+}
+
+/*
  * This is the main function which is responsible of reducing a state to a new one for a registered action, otherwise
  * it returns the same state it received.
  *
@@ -67,6 +103,12 @@ export default function artistAlbums(state=initialState, action) {
 
     case types.REQUEST_ARTIST_ALBUMS:
       return requestArtistAlbums(state);
+
+    case types.RECEIVE_ALBUM_DETAILS:
+      return receiveAlbumDetails(state, action.details);
+
+    case types.REQUEST_ALBUM_DETAILS:
+      return requestAlbumDetails(state);
 
     default:
       return state;
