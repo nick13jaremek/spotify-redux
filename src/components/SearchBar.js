@@ -10,6 +10,7 @@ export default class SearchBar extends Component {
   }
 
   searchItems(itemType) {
+    console.log('SearchItems');
     const {dispatch} = this.props; // Obtain the dispatch function from the store object passed to the App component by the 'Provider' parent component
     if (itemType === 'artists') {
       const artistName = ReactDOM.findDOMNode(this.refs.artistName).value;

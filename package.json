@@ -36,6 +36,8 @@
     "react-shallow-testutils": "^0.7.1",
     "redux-mock-store": "0.0.6",
     "sass-loader": "^3.1.2",
+    "sinon": "^1.17.2",
+    "sinon-chai": "^2.8.0",
     "style-loader": "^0.13.0",
     "webpack": "^1.12.9",
     "webpack-dev-server": "^1.14.0"

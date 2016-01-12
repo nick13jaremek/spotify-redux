@@ -1,14 +1,31 @@
 import React from 'react';
-import {expect} from 'chai';
 import ReactDOM from 'react-dom';
+
+const chai = require('chai');
+const sinon = require('sinon');
+const sinonChai = require('sinon-chai');
+const expect = chai.expect;
+chai.use(sinonChai);
+
 import ReactTestUtils from 'react-addons-test-utils';
+import shallowTestUtils from "react-shallow-testutils";
+import configureStore from 'redux-mock-store';
+import thunkMiddleware from 'redux-thunk';
+import * as actions from '../../src/constants/ActionTypes';
+
+const middlewares = [thunkMiddleware];
+const mockStore = configureStore(middlewares);
 
 import SearchBar from '../../src/components/SearchBar';
 
-function setup() {
+function setup(options) {
+
+  options.dataType = (options && options.dataType) ? options.dataType : 'stuff';
+  options.dispatch = (options && options.dispatch) ? options.dispatch : function() {}
+
   let props = {
-    dataType: 'stuff',
-    dispatch: function() {}
+    dataType: options.dataType,
+    dispatch: options.dispatch
   };
 
   let renderer = ReactTestUtils.createRenderer();
@@ -85,10 +102,32 @@ describe('SearchBar component', () => {
   });
 
   it('has props defined', () => {
-    const {props} = setup();
+    const {props} = setup({});
 
     expect(props.dataType).to.be.a('string');
     expect(props.dataType).to.equal('stuff');
     expect(props.dispatch).to.be.a('function');
+  });
+
+  it('dispatches search action on button click', () => {
+
+    const store = mockStore({
+      artists: Map({
+        isFetching: false,
+        items: []
+      })
+    }, [{type: actions.RECEIVE_ARTIST_ALBUMS}]);
+
+    let spy = sinon.spy();
+    const {output, props} = setup({dispatch: spy, dataType: 'artists'});
+    const input = shallowTestUtils.findAllWithType(output, 'input')[0];
+    input.value = 'Muse';
+    ReactTestUtils.Simulate.change(input);
+
+    console.log('Input', input);
+    const button = shallowTestUtils.findAllWithType(output, 'button')[0];
+    console.log('Button', button);
+    button.props.onClick();
+    expect(spy).to.have.been.called;
   });
 });
