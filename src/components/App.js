@@ -1,14 +1,9 @@
 import React, {Component} from 'react';
-import {connect} from 'react-redux';
 
 import NavigationBar from './NavigationBar';
 import Index from './Index';
 import Footer from './Footer';
 export class App extends Component {
-
-  componentDidMount() {
-    const {dispatch} = this.props; // Obtain the dispatch function from the store object passed to the App component by the 'Provider' parent component
-  }
 
   render() {
     return (
@@ -20,12 +15,3 @@ export class App extends Component {
     );
   }
 }
-
-function mapStateToProps(state) {
-  const {artists} = state;
-  return {
-    artists
-  };
-}
-
-export const AppContainer = connect(mapStateToProps)(App);
