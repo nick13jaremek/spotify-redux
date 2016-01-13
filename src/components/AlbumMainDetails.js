@@ -25,7 +25,7 @@ export default class AlbumMainDetails extends Component {
       <li className="list-group-item"><b>Popularity: </b><span>{details.popularity}</span></li> : null;
 
     const releaseDate = details.release_date ?
-      <li className="list-group-item"><b>Release Data: </b><span>{details.release_date}</span></li> : null;
+      <li className="list-group-item"><b>Release Date: </b><span>{details.release_date}</span></li> : null;
 
     const numberOfTracks = details.tracks ? <li className="list-group-item"><b>Tracks: </b><span>{details.tracks.total}</span></li> : null;
 
