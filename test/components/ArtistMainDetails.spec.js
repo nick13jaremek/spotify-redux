@@ -61,7 +61,6 @@ describe('ArtistMainDetails populated component', () => {
     data.genres = ['electro-rock'];
 
     const {output} = setup({artist: ARTIST_FIXTURE, albums: ALBUM_FIXTURE.length});
-    console.log('OUTPUT', output);
     expect(output.type).to.equal('div');
     expect(output.props.children).to.be.an('object');
 
@@ -158,7 +157,6 @@ describe('ArtistMainDetails populated component', () => {
 
   it('renders the component without artist details except for image', () => {
     const {output} = setup({artist: {url: ''}});
-    console.log('output', output);
     /*
     * Use the 'shallowTestUtils' library to find DOM elements in the component
     * obtained as an output from the ReactTestUtils.Renderer object.
