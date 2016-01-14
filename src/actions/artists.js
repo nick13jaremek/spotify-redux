@@ -12,12 +12,6 @@ export function getArtists(name) {
   };
 }
 
-export function setArtistName(name) {
-  return {
-    type: types.SET_ARTIST_NAME,
-    value: name
-  }
-}
 function receiveArtists(json) {
   return {
     type: types.RECEIVE_ARTISTS,
