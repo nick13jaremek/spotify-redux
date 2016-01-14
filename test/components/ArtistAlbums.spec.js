@@ -61,7 +61,7 @@ describe('ArtistAlbums populated component', () => {
     expect(output.type).to.equal('div');
     expect(output.props.className).to.equal('col-md-9 col-sm-9 padded');
     expect(output.props.children).to.be.an('array');
-    expect(output.props.children).to.have.length(7)
+    expect(output.props.children).to.have.length(14)
 
     const rows = output.props.children;
 

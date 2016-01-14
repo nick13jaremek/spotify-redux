@@ -18,6 +18,8 @@ import AlbumSongs from '../../src/components/AlbumSongs';
 const ALBUM_FIXTURE = require('../fixtures/albums').items[0];
 const ALBUM_ID = ALBUM_FIXTURE.id;
 
+//TODO: mock the HTTP request to the API endpoints with nock
+
 function setup() {
 
   const store = mockStore({

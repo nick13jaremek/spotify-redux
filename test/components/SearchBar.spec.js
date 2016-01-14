@@ -18,6 +18,8 @@ const mockStore = configureStore(middlewares);
 
 import SearchBar from '../../src/components/SearchBar';
 
+//TODO: mock the HTTP request to the API endpoints with nock
+
 function setup(options) {
 
   options.dataType = (options && options.dataType) ? options.dataType : 'stuff';

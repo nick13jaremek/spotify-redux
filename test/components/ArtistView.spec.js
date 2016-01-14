@@ -19,6 +19,8 @@ const ARTIST_ID = 'abcde012345';
 const ARTIST_FIXTURE = require('../fixtures/artists').artists.items[0];
 const ALBUMS_FIXTURE = require('../fixtures/albums').items;
 
+//TODO: mock the HTTP request to the API endpoints with nock
+
 function setup() {
 
   /* This mock store starts with an initial state as given in the first argument

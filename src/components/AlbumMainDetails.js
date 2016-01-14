@@ -48,7 +48,6 @@ export default class AlbumMainDetails extends Component {
 
   render() {
     const {details} = this.props;
-    console.log('AlbumMainDetails::details', details);
     return (
       <div>
         {this.renderAlbumSongs()}

@@ -5,7 +5,7 @@ export function getArtistAlbums(artistId) {
   return dispatch => {
     dispatch(requestArtistAlbums(artistId));
     return SpotifyApi.getArtistAlbums(artistId, {limit: 40})
-      .then(json => dispatch(receiveArtistAlbums(json)))
+      .then(json =>dispatch(receiveArtistAlbums(json)))
       .catch(ex => {
         console.log('ex', ex);
       })

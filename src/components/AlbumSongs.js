@@ -39,7 +39,6 @@ export default class AlbumSongs extends Component {
   }
   render() {
     const {details} = this.props;
-    console.log('AlbumSongs::details', details);
     return (
       <div className="col-md-9 col-sm-9">
         <h1>Album tracks</h1>
