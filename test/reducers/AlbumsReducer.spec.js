@@ -1,31 +1,33 @@
 import {List, Map, fromJS} from 'immutable';
 import {expect} from 'chai';
-import reducer from '../../src/reducers/ArtistsReducer';
+import reducer from '../../src/reducers/AlbumsReducer';
 
-const ARTISTS_FIXTURE = require('../fixtures/artists').artists;
-const SINGLE_ARTIST_FIXTURE = require('../fixtures/artist');
+const ALBUMS_FIXTURE = require('../fixtures/albums').items;
+const SINGLE_ALBUM_FIXTURE = require('../fixtures/album');
 
-describe('Artists reducer',  () => {
-  it('handles the RECEIVE_ARTISTS action', () => {
+describe('Albums reducer', () => {
+  it('handles the RECEIVE_ARTIST_ALBUMS action', () => {
     const initialState = Map();
     const action = {
-      type: 'RECEIVE_ARTISTS',
-      artists: ARTISTS_FIXTURE,
+      type: 'RECEIVE_ARTIST_ALBUMS',
+      albums: ALBUMS_FIXTURE,
+      total: ALBUMS_FIXTURE.length
     };
 
     const nextState = reducer(initialState, action);
 
     expect(nextState).to.equal(fromJS({
       isFetching: false,
-      items: ARTISTS_FIXTURE.items
+      items: ALBUMS_FIXTURE,
+      total: ALBUMS_FIXTURE.length
     }));
   });
 
-  it('handles the REQUEST_ARTISTS action', () => {
-
+  it('handles the REQUEST_ARTIST_ALBUMS action', () => {
     const initialState = Map();
+
     const action = {
-      type: 'REQUEST_ARTISTS'
+      type: 'REQUEST_ARTIST_ALBUMS'
     };
 
     const nextState = reducer(initialState, action);
@@ -35,25 +37,27 @@ describe('Artists reducer',  () => {
     }));
   });
 
-  it('handles the RECEIVE_ARTIST_DETAILS action', () => {
+  it('handles the RECEIVE_ALBUM_DETAILS action', () => {
     const initialState = Map();
+
     const action = {
-      type: 'RECEIVE_ARTIST_DETAILS',
-      artist: SINGLE_ARTIST_FIXTURE
+      type: 'RECEIVE_ALBUM_DETAILS',
+      details: ALBUMS_FIXTURE
     };
 
     const nextState = reducer(initialState, action);
 
     expect(nextState).to.equal(fromJS({
       isFetching: false,
-      details: SINGLE_ARTIST_FIXTURE
-    }))
+      details: ALBUMS_FIXTURE
+    }));
   });
 
-  it('handles the REQUEST_ARTIST_DETAILS action', () => {
+  it('handles the REQUEST_ALBUM_DETAILS action', () => {
     const initialState = Map();
+
     const action = {
-      type: 'REQUEST_ARTIST_DETAILS'
+      type: 'REQUEST_ALBUM_DETAILS'
     };
 
     const nextState = reducer(initialState, action);
@@ -85,7 +89,8 @@ describe('Artists reducer',  () => {
     expect(nextState).to.equal(fromJS({
       isFetching: false,
       items: [],
-      details: {}
+      details: {},
+      total: 0
     }));
   });
 });

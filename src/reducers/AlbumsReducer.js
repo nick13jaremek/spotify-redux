@@ -28,7 +28,7 @@ const initialState = Map({
  */
 function receiveArtistAlbums(state, artistAlbums, totalAlbums) {
   var newState = fromJS({
-    items: artistAlbums, // TODO: extract details from the correct property of the artistDetails object
+    items: artistAlbums,
     isFetching: false,
     total: totalAlbums
   });
@@ -99,7 +99,7 @@ function requestAlbumDetails(state) {
 export default function artistAlbums(state=initialState, action) {
   switch(action.type) {
     case types.RECEIVE_ARTIST_ALBUMS:
-      return receiveArtistAlbums(state, action.albums);
+      return receiveArtistAlbums(state, action.albums, action.total);
 
     case types.REQUEST_ARTIST_ALBUMS:
       return requestArtistAlbums(state);

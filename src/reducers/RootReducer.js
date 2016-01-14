@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux';
 import artistReducer from './ArtistsReducer';
-import artistAlbumsReducer from './ArtistAlbumsReducer';
+import artistAlbumsReducer from './AlbumsReducer';
 import inputsReducer from './InputsReducer';
 
 const rootReducer = combineReducers({

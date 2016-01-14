@@ -103,7 +103,6 @@ function smartSetup() {
     dispatch: store.dispatch
   };
 
-
   let renderer = ReactTestUtils.createRenderer();
   renderer.render(
     <ArtistViewContainer {...props} />
@@ -162,7 +161,7 @@ describe('ArtistView component', () => {
 
 describe('ArtistViewContainer component', () => {
 
-  it('renders the component with additional props', () => {
+  it('renders the component with additional mapped props', () => {
 
     const {output} = smartSetup();
     expect(output.type).to.equal(ArtistView);
